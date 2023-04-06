@@ -16,5 +16,10 @@ namespace EstructuraDatos
         {
             InitializeComponent();
         }
+
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

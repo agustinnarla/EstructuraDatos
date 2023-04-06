@@ -13,6 +13,7 @@ namespace EstructuraDatos
         public Nodo Primero;
         public Nodo Ultimo;
         public Nodo Auxiliar;
+        public Int32 varDato;
         public void cmdAgregar(Nodo Nuevo)
         {
             if (Primero == null)
@@ -52,7 +53,31 @@ namespace EstructuraDatos
             }
         }
 
-        public void cmdRecorrer(Nodo Axuiliar) 
+        public void cmdRecorrer(Nodo Listar) 
+        {
+            //if (Primero != null)
+            //{
+            //    while (Auxiliar != null /*&& Auxiliar == Auxiliar.Listar*/)
+            //    {
+            //        Auxiliar = Auxiliar.Siguiente; 
+            //    }
+            //    if (Auxiliar == null )
+            //    {
+            //        MessageBox.Show("El dato no está")
+            //    }
+
+            //    else
+            //    {
+            //        MessageBox.Show("El dato se encontró");
+            //    }
+
+            //    else
+            //    {
+            //        MessageBox.Show("No hay elementos");
+            //    }
+            //}
+        }
+        public void cmdListar(Nodo Axuiliar)
         {
             if (Primero != null)
             {
@@ -65,7 +90,7 @@ namespace EstructuraDatos
             }
             else
             {
-                MessageBox.Show("No hay elementos");
+                MessageBox.Show("no hay elementos");
             }
         }
     }

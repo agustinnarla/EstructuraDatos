@@ -16,7 +16,7 @@ namespace EstructuraDatos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEstructuraDatos());
+            Application.Run(new frmEstructuraDinamicaLineal_Cola());
         }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace EstructuraDatos
 {
-    internal class Nodo
+    internal class clsNodo
     {
 
         private Int32 cod;
         private String nom;
         private String tra;
-        private Nodo sig;
-        public Nodo aux;
+        private clsNodo sig;
+        public clsNodo aux;
 
         public Int32 Codigo 
         {
@@ -30,13 +30,13 @@ namespace EstructuraDatos
             get { return tra; }
             set { tra = value; }
         }
-        public Nodo Siguiente 
+        public clsNodo Siguiente 
         {
             get { return sig; }
             set { sig = value; }
         }
 
-        public Nodo Auxliar
+        public clsNodo Auxliar
         {
             get { return aux; }
             set { aux = value; }

@@ -46,35 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cola.cs" />
-    <Compile Include="frmEstructuraCola.cs">
+    <Compile Include="Clases\clsCola.cs" />
+    <Compile Include="Formularios\frmEstructuraCola.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEstructuraCola.Designer.cs">
+    <Compile Include="Formularios\frmEstructuraCola.Designer.cs">
       <DependentUpon>frmEstructuraCola.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDatos.cs">
+    <Compile Include="Formularios\frmDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDatos.Designer.cs">
+    <Compile Include="Formularios\frmDatos.Designer.cs">
       <DependentUpon>frmDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Formularios\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Formularios\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nodo.cs" />
+    <Compile Include="Clases\clsNodo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmEstructuraCola.resx">
+    <EmbeddedResource Include="Formularios\frmEstructuraCola.resx">
       <DependentUpon>frmEstructuraCola.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDatos.resx">
+    <EmbeddedResource Include="Formularios\frmDatos.resx">
       <DependentUpon>frmDatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Formularios\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

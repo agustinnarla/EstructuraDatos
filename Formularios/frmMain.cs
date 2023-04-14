@@ -27,5 +27,18 @@ namespace EstructuraDatos
         {
             this.Close();
         }
+
+        private void colaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstructuraDinamicaLineal_Cola objEstructuraDatosCola = new frmEstructuraDinamicaLineal_Cola();
+            objEstructuraDatosCola.Show();
+        }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstructuraPila objEstructuraPila = new frmEstructuraPila();
+            objEstructuraPila.Show();
+            
+        }
     }
 }

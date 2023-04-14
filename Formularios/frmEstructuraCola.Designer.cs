@@ -277,6 +277,7 @@
             this.Controls.Add(this.picFoto);
             this.Name = "frmEstructuraDinamicaLineal_Cola";
             this.Text = "Estructura Dinàmica Lineal - Cola";
+            this.Load += new System.EventHandler(this.frmEstructuraDinamicaLineal_Cola_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();

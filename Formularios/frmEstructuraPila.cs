@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstructuraDatos.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,19 @@ using System.Windows.Forms;
 
 namespace EstructuraDatos
 {
-    public partial class frmEstructuraDinamicaLineal_Cola : Form
+    public partial class frmEstructuraPila : Form
     {
-        public frmEstructuraDinamicaLineal_Cola()
+        clsPila objPila = new clsPila();
+        public frmEstructuraPila()
         {
             InitializeComponent();
         }
-        clsCola objCola = new clsCola();
+        
+        private void frmEstructuraPila_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
             clsNodo objNodo = new clsNodo();
@@ -24,9 +31,9 @@ namespace EstructuraDatos
             objNodo.Nombre = txtNombre.Text;
             objNodo.Tramite = txtTramite.Text;
 
-            objCola.cmdAgregar(objNodo);
-            objCola.cmdRecorrer(grlDatos);
-            objCola.cmdRecorrer(lstDatos);
+            objPila.cmdAgregar(objNodo);
+            objPila.cmdRecorrer(grlDatos);
+            objPila.cmdRecorrer(lstDatos);
             txtTramite.Text = "";
             txtCodigo.Text = "";
             txtNombre.Text = "";
@@ -34,16 +41,16 @@ namespace EstructuraDatos
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            if (objCola.Primero != null)
+            if (objPila.Primero != null)
             {
-                txtCodigoEliminar.Text = objCola.Primero.Codigo.ToString();
-                txtNombreEliminar.Text = objCola.Primero.Nombre;
-                txtTramiteEliminar.Text = objCola.Primero.Tramite;
+                txtCodigoEliminar.Text = objPila.Primero.Codigo.ToString();
+                txtNombreEliminar.Text = objPila.Primero.Nombre;
+                txtTramiteEliminar.Text = objPila.Primero.Tramite;
 
-                objCola.cmdEliminar();
-                objCola.cmdRecorrer(grlDatos);
-                objCola.cmdRecorrer(lstDatos);
-                
+                objPila.cmdEliminar();
+                objPila.cmdRecorrer(grlDatos);
+                objPila.cmdRecorrer(lstDatos);
+
             }
             else
             {
@@ -51,11 +58,6 @@ namespace EstructuraDatos
                 txtCodigo.Text = "";
                 txtNombre.Text = "";
             }
-        }
-
-        private void frmEstructuraDinamicaLineal_Cola_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

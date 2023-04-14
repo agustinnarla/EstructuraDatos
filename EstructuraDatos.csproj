@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\clsCola.cs" />
+    <Compile Include="Clases\clsPila.cs" />
     <Compile Include="Formularios\frmEstructuraCola.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,12 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\clsNodo.cs" />
+    <Compile Include="Formularios\frmEstructuraPila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEstructuraPila.Designer.cs">
+      <DependentUpon>frmEstructuraPila.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmEstructuraCola.resx">
@@ -73,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDatos.resx">
       <DependentUpon>frmDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEstructuraPila.resx">
+      <DependentUpon>frmEstructuraPila.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

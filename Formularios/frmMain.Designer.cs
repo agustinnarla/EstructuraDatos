@@ -35,6 +35,8 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estructuraLinealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estructuraNoLinealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +83,9 @@
             // 
             // estructuraLinealToolStripMenuItem
             // 
+            this.estructuraLinealToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.colaToolStripMenuItem,
+            this.pilaToolStripMenuItem});
             this.estructuraLinealToolStripMenuItem.Name = "estructuraLinealToolStripMenuItem";
             this.estructuraLinealToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.estructuraLinealToolStripMenuItem.Text = "Estructura Lineal";
@@ -90,6 +95,20 @@
             this.estructuraNoLinealToolStripMenuItem.Name = "estructuraNoLinealToolStripMenuItem";
             this.estructuraNoLinealToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
             this.estructuraNoLinealToolStripMenuItem.Text = "Estructura No Lineal";
+            // 
+            // colaToolStripMenuItem
+            // 
+            this.colaToolStripMenuItem.Name = "colaToolStripMenuItem";
+            this.colaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colaToolStripMenuItem.Text = "Cola";
+            this.colaToolStripMenuItem.Click += new System.EventHandler(this.colaToolStripMenuItem_Click);
+            // 
+            // pilaToolStripMenuItem
+            // 
+            this.pilaToolStripMenuItem.Name = "pilaToolStripMenuItem";
+            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pilaToolStripMenuItem.Text = "Pila";
+            this.pilaToolStripMenuItem.Click += new System.EventHandler(this.pilaToolStripMenuItem_Click);
             // 
             // frmEstructuraDatos
             // 
@@ -117,6 +136,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem estructuraLinealToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estructuraNoLinealToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pilaToolStripMenuItem;
     }
 }
 

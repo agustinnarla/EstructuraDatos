@@ -40,5 +40,11 @@ namespace EstructuraDatos
             objEstructuraPila.Show();
             
         }
+
+        private void simpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.frmEstructuraListaSimple frmEstructuraListaSimple = new Formularios.frmEstructuraListaSimple();
+            frmEstructuraListaSimple.Show();
+        }
     }
 }

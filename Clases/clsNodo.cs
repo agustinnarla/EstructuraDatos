@@ -13,7 +13,7 @@ namespace EstructuraDatos
         private String nom;
         private String tra;
         private clsNodo sig;
-        public clsNodo aux;
+        private clsNodo ant;
 
         public Int32 Codigo 
         {
@@ -36,10 +36,12 @@ namespace EstructuraDatos
             set { sig = value; }
         }
 
-        public clsNodo Auxliar
+        public clsNodo Anterior
         {
-            get { return aux; }
-            set { aux = value; }
+            get { return ant; }
+            set { ant = value; }
         }
+
+
     }
 }

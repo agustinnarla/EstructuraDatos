@@ -43,8 +43,14 @@ namespace EstructuraDatos
 
         private void simpleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.frmEstructuraListaSimple frmEstructuraListaSimple = new Formularios.frmEstructuraListaSimple();
-            frmEstructuraListaSimple.Show();
+            Formularios.frmEstructuraListaSimple objEstructuraListaSimple = new Formularios.frmEstructuraListaSimple();
+            objEstructuraListaSimple.Show();
+        }
+
+        private void dobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.frmEstructuraListaDoble objEstructuraListaDoble = new Formularios.frmEstructuraListaDoble();
+            objEstructuraListaDoble.Show();
         }
     }
 }

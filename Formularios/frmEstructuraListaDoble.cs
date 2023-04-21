@@ -10,50 +10,48 @@ using System.Windows.Forms;
 
 namespace EstructuraDatos.Formularios
 {
-    public partial class frmEstructuraListaSimple : Form
+    public partial class frmEstructuraListaDoble : Form
     {
-        public frmEstructuraListaSimple()
+        public frmEstructuraListaDoble()
         {
             InitializeComponent();
         }
+        Clases.clsListaDoble objListaDoble = new Clases.clsListaDoble();
 
-        Clases.clsListaSimple objListaSimple = new Clases.clsListaSimple();
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
-
             clsNodo objNodo = new clsNodo();
             objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             objNodo.Nombre = txtNombre.Text;
             objNodo.Tramite = txtTramite.Text;
 
-            objListaSimple.cmdAgregar(objNodo);
-            objListaSimple.cmdRecorrer(grlDatos);
-            objListaSimple.cmdRecorrer(lstDatos);
-            objListaSimple.cmdRecorrer(lstCodigo);
+            objListaDoble.cmdAgregar(objNodo);
+            objListaDoble.cmdRecorrer(grlDatos);
+            objListaDoble.cmdRecorrer(lstDatos);
+            objListaDoble.cmdRecorrer(lstCodigo);
             txtTramite.Text = "";
             txtCodigo.Text = "";
             txtNombre.Text = "";
 
-         
+           
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            if (objListaSimple != null)
+            if (objListaDoble != null)
             {
 
                 Int32 varCod = Convert.ToInt32(lstCodigo.Text);
 
-                lstCodigo.Text = objListaSimple.ToString();
+                lstCodigo.Text = objListaDoble.ToString();
 
-                objListaSimple.cmdEliminar(varCod);
-                objListaSimple.cmdRecorrer(grlDatos);
-                objListaSimple.cmdRecorrer(lstDatos);
-                objListaSimple.cmdRecorrer(lstCodigo);
+                objListaDoble.cmdEliminar(varCod);
+                objListaDoble.cmdRecorrer(grlDatos);
+                objListaDoble.cmdRecorrer(lstDatos);
+                objListaDoble.cmdRecorrer(lstCodigo);
 
 
             }
-            
         }
     }
 }

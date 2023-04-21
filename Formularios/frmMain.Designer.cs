@@ -36,10 +36,10 @@
             this.estructuraLinealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estructuraNoLinealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dobleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estructuraNoLinealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,12 +108,6 @@
             this.pilaToolStripMenuItem.Text = "Pila";
             this.pilaToolStripMenuItem.Click += new System.EventHandler(this.pilaToolStripMenuItem_Click);
             // 
-            // estructuraNoLinealToolStripMenuItem
-            // 
-            this.estructuraNoLinealToolStripMenuItem.Name = "estructuraNoLinealToolStripMenuItem";
-            this.estructuraNoLinealToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
-            this.estructuraNoLinealToolStripMenuItem.Text = "Estructura No Lineal";
-            // 
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -135,6 +129,13 @@
             this.dobleToolStripMenuItem.Name = "dobleToolStripMenuItem";
             this.dobleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dobleToolStripMenuItem.Text = "Doble";
+            this.dobleToolStripMenuItem.Click += new System.EventHandler(this.dobleToolStripMenuItem_Click);
+            // 
+            // estructuraNoLinealToolStripMenuItem
+            // 
+            this.estructuraNoLinealToolStripMenuItem.Name = "estructuraNoLinealToolStripMenuItem";
+            this.estructuraNoLinealToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.estructuraNoLinealToolStripMenuItem.Text = "Estructura No Lineal";
             // 
             // frmEstructuraDatos
             // 

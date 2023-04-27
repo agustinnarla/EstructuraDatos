@@ -49,8 +49,8 @@
             this.lblCòdigo = new System.Windows.Forms.Label();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.mrcListarDatos = new System.Windows.Forms.GroupBox();
-            this.btnAscendente = new System.Windows.Forms.RadioButton();
             this.btnDescendente = new System.Windows.Forms.RadioButton();
+            this.btnAscendente = new System.Windows.Forms.RadioButton();
             this.mrcListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).BeginInit();
             this.mrcElementoEliminados.SuspendLayout();
@@ -239,17 +239,7 @@
             this.mrcListarDatos.TabIndex = 11;
             this.mrcListarDatos.TabStop = false;
             this.mrcListarDatos.Text = "Listar Datos";
-            // 
-            // btnAscendente
-            // 
-            this.btnAscendente.AutoSize = true;
-            this.btnAscendente.Location = new System.Drawing.Point(6, 22);
-            this.btnAscendente.Name = "btnAscendente";
-            this.btnAscendente.Size = new System.Drawing.Size(82, 17);
-            this.btnAscendente.TabIndex = 0;
-            this.btnAscendente.TabStop = true;
-            this.btnAscendente.Text = "Ascendente";
-            this.btnAscendente.UseVisualStyleBackColor = true;
+            this.mrcListarDatos.Enter += new System.EventHandler(this.mrcListarDatos_Enter);
             // 
             // btnDescendente
             // 
@@ -261,6 +251,18 @@
             this.btnDescendente.TabStop = true;
             this.btnDescendente.Text = "Descendente";
             this.btnDescendente.UseVisualStyleBackColor = true;
+            // 
+            // btnAscendente
+            // 
+            this.btnAscendente.AutoSize = true;
+            this.btnAscendente.Location = new System.Drawing.Point(6, 22);
+            this.btnAscendente.Name = "btnAscendente";
+            this.btnAscendente.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendente.TabIndex = 0;
+            this.btnAscendente.TabStop = true;
+            this.btnAscendente.Text = "Ascendente";
+            this.btnAscendente.UseVisualStyleBackColor = true;
+            this.btnAscendente.CheckedChanged += new System.EventHandler(this.btnAscendente_CheckedChanged);
             // 
             // frmEstructuraListaDoble
             // 

@@ -46,10 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\clsArbolBinario.cs" />
     <Compile Include="Clases\clsCola.cs" />
     <Compile Include="Clases\clsListaDoble.cs" />
     <Compile Include="Clases\clsListaSimple.cs" />
     <Compile Include="Clases\clsPila.cs" />
+    <Compile Include="Formularios\frmEstructuraArbolBinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEstructuraArbolBinario.Designer.cs">
+      <DependentUpon>frmEstructuraArbolBinario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmEstructuraListaDoble.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmEstructuraArbolBinario.resx">
+      <DependentUpon>frmEstructuraArbolBinario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEstructuraListaDoble.resx">
       <DependentUpon>frmEstructuraListaDoble.cs</DependentUpon>
     </EmbeddedResource>

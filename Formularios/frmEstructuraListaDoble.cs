@@ -53,5 +53,15 @@ namespace EstructuraDatos.Formularios
 
             }
         }
+
+        private void mrcListarDatos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAscendente_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

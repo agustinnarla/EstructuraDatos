@@ -66,7 +66,7 @@ namespace EstructuraDatos.Clases
         }
         public void cmdEliminar(Int32 parCodigo)
         {
-
+            //Si el dato que borro es el ùnico de la lista 
             if (Primero.Codigo == parCodigo && Ultimo == Primero)
             {
                 Primero = null;
@@ -75,6 +75,7 @@ namespace EstructuraDatos.Clases
             }
             else
             {
+                //si el codigo que quiero borrar es el primero
                 if (Primero.Codigo == parCodigo)
                 {
                     Primero = Primero.Siguiente;
@@ -82,6 +83,7 @@ namespace EstructuraDatos.Clases
                 }
                 else
                 {
+                    //si el que borro es el ultimo de la lst
                     if (Ultimo.Codigo == parCodigo)
                     {
                         Ultimo = Ultimo.Anterior;
@@ -89,6 +91,7 @@ namespace EstructuraDatos.Clases
                     }
                     else
                     {
+                        //intermedio    
                         clsNodo Aux = Primero;
                         clsNodo Ant = Primero;
                         while (Aux.Codigo < parCodigo)
@@ -96,9 +99,13 @@ namespace EstructuraDatos.Clases
                             Ant = Aux;
                             Aux = Aux.Siguiente;
                         }
-                        Ant.Siguiente = Aux.Siguiente;
+
                         Aux = Aux.Siguiente;
+                        Ant.Siguiente = Aux;
                         Aux.Anterior = Ant;
+                        //Ant.Siguiente = Aux.Siguiente;
+                        //Aux = Aux.Siguiente;
+                        //Aux.Anterior = Ant;
                     }
                     
                 }

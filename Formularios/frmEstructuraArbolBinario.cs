@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstructuraDatos.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,27 @@ namespace EstructuraDatos.Formularios
         public frmEstructuraArbolBinario()
         {
             InitializeComponent();
+        }
+
+        Clases.clsArbolBinario objArbolBinario = new Clases.clsArbolBinario();
+
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo objNodo = new clsNodo();
+
+            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objNodo.Nombre = txtNombre.Text;
+            objNodo.Tramite = txtTramite.Text;
+
+            objArbolBinario.cmdAgregar(objNodo);
+
+            objArbolBinario.cmdRecorrer(grlDatos);
+
+            objArbolBinario.cmdRecorrer(lstDatos);
+
+            txtTramite.Text = "";
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
         }
     }
 }

@@ -48,11 +48,17 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCòdigo = new System.Windows.Forms.Label();
             this.picFoto = new System.Windows.Forms.PictureBox();
+            this.mrcListarDatos = new System.Windows.Forms.GroupBox();
+            this.btnDescendente = new System.Windows.Forms.RadioButton();
+            this.btnAscendente = new System.Windows.Forms.RadioButton();
+            this.btnPost = new System.Windows.Forms.RadioButton();
+            this.btnPreOrden = new System.Windows.Forms.RadioButton();
             this.mrcListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).BeginInit();
             this.mrcElementoEliminados.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
+            this.mrcListarDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // mrcListado
@@ -61,7 +67,7 @@
             this.mrcListado.Controls.Add(this.lstDatos);
             this.mrcListado.Location = new System.Drawing.Point(12, 214);
             this.mrcListado.Name = "mrcListado";
-            this.mrcListado.Size = new System.Drawing.Size(559, 170);
+            this.mrcListado.Size = new System.Drawing.Size(568, 170);
             this.mrcListado.TabIndex = 16;
             this.mrcListado.TabStop = false;
             this.mrcListado.Text = "Listado en una Lista y una Grilla ";
@@ -108,7 +114,7 @@
             this.mrcElementoEliminados.Controls.Add(this.lblCodigoEliminar);
             this.mrcElementoEliminados.Location = new System.Drawing.Point(379, 12);
             this.mrcElementoEliminados.Name = "mrcElementoEliminados";
-            this.mrcElementoEliminados.Size = new System.Drawing.Size(192, 110);
+            this.mrcElementoEliminados.Size = new System.Drawing.Size(201, 110);
             this.mrcElementoEliminados.TabIndex = 14;
             this.mrcElementoEliminados.TabStop = false;
             this.mrcElementoEliminados.Text = "Elemento Eliminado";
@@ -224,11 +230,73 @@
             this.picFoto.TabIndex = 12;
             this.picFoto.TabStop = false;
             // 
+            // mrcListarDatos
+            // 
+            this.mrcListarDatos.Controls.Add(this.btnPost);
+            this.mrcListarDatos.Controls.Add(this.btnPreOrden);
+            this.mrcListarDatos.Controls.Add(this.btnDescendente);
+            this.mrcListarDatos.Controls.Add(this.btnAscendente);
+            this.mrcListarDatos.Location = new System.Drawing.Point(379, 128);
+            this.mrcListarDatos.Name = "mrcListarDatos";
+            this.mrcListarDatos.Size = new System.Drawing.Size(201, 80);
+            this.mrcListarDatos.TabIndex = 17;
+            this.mrcListarDatos.TabStop = false;
+            this.mrcListarDatos.Text = "Listar Datos";
+            // 
+            // btnDescendente
+            // 
+            this.btnDescendente.AutoSize = true;
+            this.btnDescendente.Location = new System.Drawing.Point(6, 45);
+            this.btnDescendente.Name = "btnDescendente";
+            this.btnDescendente.Size = new System.Drawing.Size(89, 17);
+            this.btnDescendente.TabIndex = 1;
+            this.btnDescendente.TabStop = true;
+            this.btnDescendente.Text = "Descendente";
+            this.btnDescendente.UseVisualStyleBackColor = true;
+            this.btnDescendente.CheckedChanged += new System.EventHandler(this.btnDescendente_CheckedChanged);
+            // 
+            // btnAscendente
+            // 
+            this.btnAscendente.AutoSize = true;
+            this.btnAscendente.Location = new System.Drawing.Point(6, 22);
+            this.btnAscendente.Name = "btnAscendente";
+            this.btnAscendente.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendente.TabIndex = 0;
+            this.btnAscendente.TabStop = true;
+            this.btnAscendente.Text = "Ascendente";
+            this.btnAscendente.UseVisualStyleBackColor = true;
+            this.btnAscendente.CheckedChanged += new System.EventHandler(this.btnAscendente_CheckedChanged);
+            // 
+            // btnPost
+            // 
+            this.btnPost.AutoSize = true;
+            this.btnPost.Location = new System.Drawing.Point(110, 45);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(78, 17);
+            this.btnPost.TabIndex = 3;
+            this.btnPost.TabStop = true;
+            this.btnPost.Text = "Post Orden";
+            this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.CheckedChanged += new System.EventHandler(this.btnPost_CheckedChanged);
+            // 
+            // btnPreOrden
+            // 
+            this.btnPreOrden.AutoSize = true;
+            this.btnPreOrden.Location = new System.Drawing.Point(110, 22);
+            this.btnPreOrden.Name = "btnPreOrden";
+            this.btnPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.btnPreOrden.TabIndex = 2;
+            this.btnPreOrden.TabStop = true;
+            this.btnPreOrden.Text = "Pre Orden";
+            this.btnPreOrden.UseVisualStyleBackColor = true;
+            this.btnPreOrden.CheckedChanged += new System.EventHandler(this.btnPreOrden_CheckedChanged);
+            // 
             // frmEstructuraArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 399);
+            this.ClientSize = new System.Drawing.Size(752, 395);
+            this.Controls.Add(this.mrcListarDatos);
             this.Controls.Add(this.mrcListado);
             this.Controls.Add(this.mrcElementoEliminados);
             this.Controls.Add(this.mrcNuevoElemento);
@@ -242,6 +310,8 @@
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
+            this.mrcListarDatos.ResumeLayout(false);
+            this.mrcListarDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +337,10 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCòdigo;
         private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.GroupBox mrcListarDatos;
+        private System.Windows.Forms.RadioButton btnDescendente;
+        private System.Windows.Forms.RadioButton btnAscendente;
+        private System.Windows.Forms.RadioButton btnPost;
+        private System.Windows.Forms.RadioButton btnPreOrden;
     }
 }

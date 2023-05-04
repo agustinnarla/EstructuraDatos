@@ -31,12 +31,40 @@ namespace EstructuraDatos.Formularios
             objArbolBinario.cmdAgregar(objNodo);
 
             objArbolBinario.cmdRecorrer(grlDatos);
-
             objArbolBinario.cmdRecorrer(lstDatos);
+            objArbolBinario.cmdRecorrer(lstCodigo);
 
             txtTramite.Text = "";
             txtCodigo.Text = "";
             txtNombre.Text = "";
+        }
+
+        private void btnAscendente_CheckedChanged(object sender, EventArgs e)
+        {
+            objArbolBinario.cmdRecorrer(grlDatos);
+            objArbolBinario.cmdRecorrer(lstDatos);
+            objArbolBinario.cmdRecorrer(lstCodigo);
+        }
+
+        private void btnDescendente_CheckedChanged(object sender, EventArgs e)
+        {
+            objArbolBinario.cmdRecorrerDsc(grlDatos);
+            objArbolBinario.cmdRecorrerDsc(lstDatos);
+            objArbolBinario.cmdRecorrerDsc(lstCodigo);
+        }
+
+        private void btnPreOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            objArbolBinario.cmdRecorrerPre(grlDatos);
+            objArbolBinario.cmdRecorrerPre(lstDatos);
+            objArbolBinario.cmdRecorrerPre(lstCodigo);
+        }
+
+        private void btnPost_CheckedChanged(object sender, EventArgs e)
+        {
+            objArbolBinario.cmdRecorrerPost(grlDatos);
+            objArbolBinario.cmdRecorrerPost(lstDatos);
+            objArbolBinario.cmdRecorrerPost(lstCodigo);
         }
     }
 }

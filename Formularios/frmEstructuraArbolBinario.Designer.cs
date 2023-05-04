@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstructuraArbolBinario));
-            this.mrcListado = new System.Windows.Forms.GroupBox();
             this.grlDatos = new System.Windows.Forms.DataGridView();
             this.Còdigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,28 +48,23 @@
             this.lblCòdigo = new System.Windows.Forms.Label();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.mrcListarDatos = new System.Windows.Forms.GroupBox();
+            this.btnAscendentePost = new System.Windows.Forms.RadioButton();
+            this.btnAscendentePre = new System.Windows.Forms.RadioButton();
             this.btnDescendente = new System.Windows.Forms.RadioButton();
             this.btnAscendente = new System.Windows.Forms.RadioButton();
-            this.btnPost = new System.Windows.Forms.RadioButton();
-            this.btnPreOrden = new System.Windows.Forms.RadioButton();
-            this.mrcListado.SuspendLayout();
+            this.tvArbol = new System.Windows.Forms.TreeView();
+            this.mrcPre = new System.Windows.Forms.GroupBox();
+            this.btnDescendentePre = new System.Windows.Forms.RadioButton();
+            this.mrcPro = new System.Windows.Forms.GroupBox();
+            this.btnDescendentePost = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).BeginInit();
             this.mrcElementoEliminados.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.mrcListarDatos.SuspendLayout();
+            this.mrcPre.SuspendLayout();
+            this.mrcPro.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mrcListado
-            // 
-            this.mrcListado.Controls.Add(this.grlDatos);
-            this.mrcListado.Controls.Add(this.lstDatos);
-            this.mrcListado.Location = new System.Drawing.Point(12, 214);
-            this.mrcListado.Name = "mrcListado";
-            this.mrcListado.Size = new System.Drawing.Size(568, 170);
-            this.mrcListado.TabIndex = 16;
-            this.mrcListado.TabStop = false;
-            this.mrcListado.Text = "Listado en una Lista y una Grilla ";
             // 
             // grlDatos
             // 
@@ -79,9 +73,9 @@
             this.Còdigo,
             this.Nombre,
             this.Tràmite});
-            this.grlDatos.Location = new System.Drawing.Point(195, 19);
+            this.grlDatos.Location = new System.Drawing.Point(198, 345);
             this.grlDatos.Name = "grlDatos";
-            this.grlDatos.Size = new System.Drawing.Size(348, 134);
+            this.grlDatos.Size = new System.Drawing.Size(385, 134);
             this.grlDatos.TabIndex = 1;
             // 
             // Còdigo
@@ -102,9 +96,9 @@
             // lstDatos
             // 
             this.lstDatos.FormattingEnabled = true;
-            this.lstDatos.Location = new System.Drawing.Point(6, 19);
+            this.lstDatos.Location = new System.Drawing.Point(12, 241);
             this.lstDatos.Name = "lstDatos";
-            this.lstDatos.Size = new System.Drawing.Size(174, 134);
+            this.lstDatos.Size = new System.Drawing.Size(174, 238);
             this.lstDatos.TabIndex = 0;
             // 
             // mrcElementoEliminados
@@ -112,9 +106,9 @@
             this.mrcElementoEliminados.Controls.Add(this.lstCodigo);
             this.mrcElementoEliminados.Controls.Add(this.cmdEliminar);
             this.mrcElementoEliminados.Controls.Add(this.lblCodigoEliminar);
-            this.mrcElementoEliminados.Location = new System.Drawing.Point(379, 12);
+            this.mrcElementoEliminados.Location = new System.Drawing.Point(198, 237);
             this.mrcElementoEliminados.Name = "mrcElementoEliminados";
-            this.mrcElementoEliminados.Size = new System.Drawing.Size(201, 110);
+            this.mrcElementoEliminados.Size = new System.Drawing.Size(385, 84);
             this.mrcElementoEliminados.TabIndex = 14;
             this.mrcElementoEliminados.TabStop = false;
             this.mrcElementoEliminados.Text = "Elemento Eliminado";
@@ -130,12 +124,13 @@
             // 
             // cmdEliminar
             // 
-            this.cmdEliminar.Location = new System.Drawing.Point(76, 68);
+            this.cmdEliminar.Location = new System.Drawing.Point(216, 31);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(100, 34);
             this.cmdEliminar.TabIndex = 7;
             this.cmdEliminar.Text = "Eliminar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
             // lblCodigoEliminar
             // 
@@ -157,14 +152,14 @@
             this.mrcNuevoElemento.Controls.Add(this.lblCòdigo);
             this.mrcNuevoElemento.Location = new System.Drawing.Point(198, 12);
             this.mrcNuevoElemento.Name = "mrcNuevoElemento";
-            this.mrcNuevoElemento.Size = new System.Drawing.Size(175, 184);
+            this.mrcNuevoElemento.Size = new System.Drawing.Size(175, 219);
             this.mrcNuevoElemento.TabIndex = 13;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
             // 
             // cmdAgregar
             // 
-            this.cmdAgregar.Location = new System.Drawing.Point(65, 132);
+            this.cmdAgregar.Location = new System.Drawing.Point(65, 150);
             this.cmdAgregar.Name = "cmdAgregar";
             this.cmdAgregar.Size = new System.Drawing.Size(100, 34);
             this.cmdAgregar.TabIndex = 6;
@@ -225,28 +220,50 @@
             this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
             this.picFoto.Location = new System.Drawing.Point(12, 12);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(180, 184);
+            this.picFoto.Size = new System.Drawing.Size(180, 219);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 12;
             this.picFoto.TabStop = false;
             // 
             // mrcListarDatos
             // 
-            this.mrcListarDatos.Controls.Add(this.btnPost);
-            this.mrcListarDatos.Controls.Add(this.btnPreOrden);
             this.mrcListarDatos.Controls.Add(this.btnDescendente);
             this.mrcListarDatos.Controls.Add(this.btnAscendente);
-            this.mrcListarDatos.Location = new System.Drawing.Point(379, 128);
+            this.mrcListarDatos.Location = new System.Drawing.Point(379, 12);
             this.mrcListarDatos.Name = "mrcListarDatos";
-            this.mrcListarDatos.Size = new System.Drawing.Size(201, 80);
+            this.mrcListarDatos.Size = new System.Drawing.Size(201, 68);
             this.mrcListarDatos.TabIndex = 17;
             this.mrcListarDatos.TabStop = false;
-            this.mrcListarDatos.Text = "Listar Datos";
+            this.mrcListarDatos.Text = "In orden";
+            // 
+            // btnAscendentePost
+            // 
+            this.btnAscendentePost.AutoSize = true;
+            this.btnAscendentePost.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendentePost.Name = "btnAscendentePost";
+            this.btnAscendentePost.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendentePost.TabIndex = 3;
+            this.btnAscendentePost.TabStop = true;
+            this.btnAscendentePost.Text = "Ascendente";
+            this.btnAscendentePost.UseVisualStyleBackColor = true;
+            this.btnAscendentePost.CheckedChanged += new System.EventHandler(this.btnPost_CheckedChanged);
+            // 
+            // btnAscendentePre
+            // 
+            this.btnAscendentePre.AutoSize = true;
+            this.btnAscendentePre.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendentePre.Name = "btnAscendentePre";
+            this.btnAscendentePre.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendentePre.TabIndex = 2;
+            this.btnAscendentePre.TabStop = true;
+            this.btnAscendentePre.Text = "Ascendente";
+            this.btnAscendentePre.UseVisualStyleBackColor = true;
+            this.btnAscendentePre.CheckedChanged += new System.EventHandler(this.btnPreOrden_CheckedChanged);
             // 
             // btnDescendente
             // 
             this.btnDescendente.AutoSize = true;
-            this.btnDescendente.Location = new System.Drawing.Point(6, 45);
+            this.btnDescendente.Location = new System.Drawing.Point(106, 33);
             this.btnDescendente.Name = "btnDescendente";
             this.btnDescendente.Size = new System.Drawing.Size(89, 17);
             this.btnDescendente.TabIndex = 1;
@@ -258,7 +275,7 @@
             // btnAscendente
             // 
             this.btnAscendente.AutoSize = true;
-            this.btnAscendente.Location = new System.Drawing.Point(6, 22);
+            this.btnAscendente.Location = new System.Drawing.Point(6, 33);
             this.btnAscendente.Name = "btnAscendente";
             this.btnAscendente.Size = new System.Drawing.Size(82, 17);
             this.btnAscendente.TabIndex = 0;
@@ -267,43 +284,75 @@
             this.btnAscendente.UseVisualStyleBackColor = true;
             this.btnAscendente.CheckedChanged += new System.EventHandler(this.btnAscendente_CheckedChanged);
             // 
-            // btnPost
+            // tvArbol
             // 
-            this.btnPost.AutoSize = true;
-            this.btnPost.Location = new System.Drawing.Point(110, 45);
-            this.btnPost.Name = "btnPost";
-            this.btnPost.Size = new System.Drawing.Size(78, 17);
-            this.btnPost.TabIndex = 3;
-            this.btnPost.TabStop = true;
-            this.btnPost.Text = "Post Orden";
-            this.btnPost.UseVisualStyleBackColor = true;
-            this.btnPost.CheckedChanged += new System.EventHandler(this.btnPost_CheckedChanged);
+            this.tvArbol.Location = new System.Drawing.Point(589, 21);
+            this.tvArbol.Name = "tvArbol";
+            this.tvArbol.Size = new System.Drawing.Size(292, 458);
+            this.tvArbol.TabIndex = 18;
             // 
-            // btnPreOrden
+            // mrcPre
             // 
-            this.btnPreOrden.AutoSize = true;
-            this.btnPreOrden.Location = new System.Drawing.Point(110, 22);
-            this.btnPreOrden.Name = "btnPreOrden";
-            this.btnPreOrden.Size = new System.Drawing.Size(73, 17);
-            this.btnPreOrden.TabIndex = 2;
-            this.btnPreOrden.TabStop = true;
-            this.btnPreOrden.Text = "Pre Orden";
-            this.btnPreOrden.UseVisualStyleBackColor = true;
-            this.btnPreOrden.CheckedChanged += new System.EventHandler(this.btnPreOrden_CheckedChanged);
+            this.mrcPre.Controls.Add(this.btnDescendentePre);
+            this.mrcPre.Controls.Add(this.btnAscendentePre);
+            this.mrcPre.Location = new System.Drawing.Point(379, 89);
+            this.mrcPre.Name = "mrcPre";
+            this.mrcPre.Size = new System.Drawing.Size(201, 68);
+            this.mrcPre.TabIndex = 18;
+            this.mrcPre.TabStop = false;
+            this.mrcPre.Text = "Pre Orden";
+            // 
+            // btnDescendentePre
+            // 
+            this.btnDescendentePre.AutoSize = true;
+            this.btnDescendentePre.Location = new System.Drawing.Point(106, 33);
+            this.btnDescendentePre.Name = "btnDescendentePre";
+            this.btnDescendentePre.Size = new System.Drawing.Size(89, 17);
+            this.btnDescendentePre.TabIndex = 1;
+            this.btnDescendentePre.TabStop = true;
+            this.btnDescendentePre.Text = "Descendente";
+            this.btnDescendentePre.UseVisualStyleBackColor = true;
+            this.btnDescendentePre.CheckedChanged += new System.EventHandler(this.btnDescendentePre_CheckedChanged);
+            // 
+            // mrcPro
+            // 
+            this.mrcPro.Controls.Add(this.btnDescendentePost);
+            this.mrcPro.Controls.Add(this.btnAscendentePost);
+            this.mrcPro.Location = new System.Drawing.Point(379, 163);
+            this.mrcPro.Name = "mrcPro";
+            this.mrcPro.Size = new System.Drawing.Size(201, 68);
+            this.mrcPro.TabIndex = 19;
+            this.mrcPro.TabStop = false;
+            this.mrcPro.Text = "Post Orden";
+            // 
+            // btnDescendentePost
+            // 
+            this.btnDescendentePost.AutoSize = true;
+            this.btnDescendentePost.Location = new System.Drawing.Point(106, 33);
+            this.btnDescendentePost.Name = "btnDescendentePost";
+            this.btnDescendentePost.Size = new System.Drawing.Size(89, 17);
+            this.btnDescendentePost.TabIndex = 1;
+            this.btnDescendentePost.TabStop = true;
+            this.btnDescendentePost.Text = "Descendente";
+            this.btnDescendentePost.UseVisualStyleBackColor = true;
+            this.btnDescendentePost.CheckedChanged += new System.EventHandler(this.btnDescendentePost_CheckedChanged);
             // 
             // frmEstructuraArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 395);
+            this.ClientSize = new System.Drawing.Size(911, 489);
+            this.Controls.Add(this.grlDatos);
+            this.Controls.Add(this.mrcPro);
+            this.Controls.Add(this.lstDatos);
+            this.Controls.Add(this.mrcPre);
+            this.Controls.Add(this.tvArbol);
             this.Controls.Add(this.mrcListarDatos);
-            this.Controls.Add(this.mrcListado);
             this.Controls.Add(this.mrcElementoEliminados);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picFoto);
             this.Name = "frmEstructuraArbolBinario";
             this.Text = "Estructura Dinamica No Lineal - Arbol Binario";
-            this.mrcListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();
             this.mrcElementoEliminados.ResumeLayout(false);
             this.mrcElementoEliminados.PerformLayout();
@@ -312,13 +361,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.mrcListarDatos.ResumeLayout(false);
             this.mrcListarDatos.PerformLayout();
+            this.mrcPre.ResumeLayout(false);
+            this.mrcPre.PerformLayout();
+            this.mrcPro.ResumeLayout(false);
+            this.mrcPro.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox mrcListado;
         private System.Windows.Forms.DataGridView grlDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Còdigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -340,7 +391,12 @@
         private System.Windows.Forms.GroupBox mrcListarDatos;
         private System.Windows.Forms.RadioButton btnDescendente;
         private System.Windows.Forms.RadioButton btnAscendente;
-        private System.Windows.Forms.RadioButton btnPost;
-        private System.Windows.Forms.RadioButton btnPreOrden;
+        private System.Windows.Forms.RadioButton btnAscendentePost;
+        private System.Windows.Forms.RadioButton btnAscendentePre;
+        private System.Windows.Forms.TreeView tvArbol;
+        private System.Windows.Forms.GroupBox mrcPre;
+        private System.Windows.Forms.RadioButton btnDescendentePre;
+        private System.Windows.Forms.GroupBox mrcPro;
+        private System.Windows.Forms.RadioButton btnDescendentePost;
     }
 }

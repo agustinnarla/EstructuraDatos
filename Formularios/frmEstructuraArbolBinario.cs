@@ -66,5 +66,37 @@ namespace EstructuraDatos.Formularios
             objArbolBinario.cmdRecorrerPost(lstDatos);
             objArbolBinario.cmdRecorrerPost(lstCodigo);
         }
+
+        private void btnDescendentePre_CheckedChanged(object sender, EventArgs e)
+        {
+            objArbolBinario.cmdRecorrerPreDsc(grlDatos);
+            objArbolBinario.cmdRecorrerPreDsc(lstDatos);
+            objArbolBinario.cmdRecorrerPreDsc(lstCodigo);
+        }
+
+        private void btnDescendentePost_CheckedChanged(object sender, EventArgs e)
+        {
+            objArbolBinario.cmdRecorrerPostDsc(grlDatos);
+            objArbolBinario.cmdRecorrerPostDsc(lstDatos);
+            objArbolBinario.cmdRecorrerPostDsc(lstCodigo);
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            if (objArbolBinario != null)
+            {
+
+                Int32 varCod = Convert.ToInt32(lstCodigo.Text);
+
+                lstCodigo.Text = objArbolBinario.ToString();
+
+                
+                objArbolBinario.cmdRecorrer(grlDatos);
+                objArbolBinario.cmdRecorrer(lstDatos);
+                objArbolBinario.cmdRecorrer(lstCodigo);
+
+
+            }
+        }
     }
 }

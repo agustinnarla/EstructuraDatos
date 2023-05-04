@@ -105,6 +105,22 @@ namespace EstructuraDatos.Clases
             PreOrden(Combo, Raiz);
         }
 
+        public void cmdRecorrerPreDsc(ListBox Lista)
+        {
+            Lista.Items.Clear();
+            PreOrdenDsc(Lista, Raiz);
+        }
+        public void cmdRecorrerPreDsc(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PreOrdenDsc(Grilla, Raiz);
+        }
+        public void cmdRecorrerPreDsc(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            PreOrden(Combo, Raiz);
+        }
+
         public void cmdRecorrerPost(ListBox Lista)
         {
             Lista.Items.Clear();
@@ -119,6 +135,23 @@ namespace EstructuraDatos.Clases
         {
             Combo.Items.Clear();
             PostOrden(Combo, Raiz);
+        }
+
+        public void cmdRecorrerPostDsc(ListBox Lista)
+        {
+
+            Lista.Items.Clear();
+            PostOrdenDsc(Lista, Raiz);
+        }
+        public void cmdRecorrerPostDsc(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PostOrdenDsc(Grilla, Raiz);
+        }
+        public void cmdRecorrerPostDsc(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            PostOrdenDsc(Combo, Raiz);
         }
 
         public void InOrdenAsc(ListBox Lst, clsNodo R)
@@ -181,6 +214,26 @@ namespace EstructuraDatos.Clases
             if (R.Derecho != null) PreOrden(Combo, R.Derecho);
         }
 
+        public void PreOrdenDsc(ListBox Lst, clsNodo R) 
+        {
+            Lst.Items.Add(R.Codigo);
+            if (R.Derecho != null) PreOrdenDsc(Lst, R.Derecho);
+            if (R.Izquierdo != null) PreOrdenDsc(Lst, R.Izquierdo);
+        }
+        public void PreOrdenDsc(DataGridView Grl, clsNodo R)
+        {
+            Grl.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+            if (R.Derecho != null) PreOrdenDsc(Grl, R.Derecho);
+            if (R.Izquierdo != null) PreOrdenDsc(Grl, R.Izquierdo);
+        }
+        public void PreOrdenDsc(ComboBox Combo, clsNodo R)
+        {
+            Combo.Items.Add(R.Codigo);
+            if (R.Derecho != null) PreOrden(Combo, R.Derecho);
+            if (R.Izquierdo != null) PreOrden(Combo, R.Izquierdo);
+        }
+
+
         public void PostOrden(ListBox Lst, clsNodo R)
         {
             if (R.Izquierdo != null) PostOrden(Lst, R.Izquierdo);
@@ -199,6 +252,26 @@ namespace EstructuraDatos.Clases
             if (R.Derecho != null) PostOrden(Combo, R.Derecho);
             Combo.Items.Add(R.Codigo);
         }
+
+        public void PostOrdenDsc(ListBox Lst, clsNodo R)
+        {
+            if (R.Derecho != null) PostOrdenDsc(Lst, R.Derecho);
+            if (R.Izquierdo != null) PostOrdenDsc(Lst, R.Izquierdo);
+            Lst.Items.Add(R.Codigo);
+        }
+        public void PostOrdenDsc(DataGridView Grl, clsNodo R)
+        {
+            if (R.Derecho != null) PostOrdenDsc(Grl, R.Derecho);
+            if (R.Izquierdo != null) PostOrdenDsc(Grl, R.Izquierdo);
+            Grl.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+        }
+        public void PostOrdenDsc(ComboBox Combo, clsNodo R)
+        {
+            if (R.Derecho != null) PostOrdenDsc(Combo, R.Derecho);
+            if (R.Izquierdo != null) PostOrdenDsc(Combo, R.Izquierdo);
+            Combo.Items.Add(R.Codigo);
+        }
+
         public void cmdCargarVecotrInOrden(clsNodo NodoPadre)
         {
             if (NodoPadre.Izquierdo != null)
@@ -230,6 +303,11 @@ namespace EstructuraDatos.Clases
                 cmdEquilibrarArbol(parInicio, varMed - 1);
                 cmdEquilibrarArbol(varMed + 1, parFinal);
             }
+        }
+
+        public void cmdEliminar(Int32 parCodigo)
+        {
+            
         }
     }
 }

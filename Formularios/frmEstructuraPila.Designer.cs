@@ -61,8 +61,10 @@
             // 
             // mrcListado
             // 
+            this.mrcListado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mrcListado.Controls.Add(this.grlDatos);
             this.mrcListado.Controls.Add(this.lstDatos);
+            this.mrcListado.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mrcListado.Location = new System.Drawing.Point(16, 214);
             this.mrcListado.Name = "mrcListado";
             this.mrcListado.Size = new System.Drawing.Size(559, 170);
@@ -72,6 +74,8 @@
             // 
             // grlDatos
             // 
+            this.grlDatos.AllowUserToAddRows = false;
+            this.grlDatos.AllowUserToDeleteRows = false;
             this.grlDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grlDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Còdigo,
@@ -79,23 +83,28 @@
             this.Tràmite});
             this.grlDatos.Location = new System.Drawing.Point(195, 19);
             this.grlDatos.Name = "grlDatos";
+            this.grlDatos.ReadOnly = true;
             this.grlDatos.Size = new System.Drawing.Size(348, 134);
             this.grlDatos.TabIndex = 1;
+            this.grlDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grlDatos_CellContentClick);
             // 
             // Còdigo
             // 
             this.Còdigo.HeaderText = "Còdigo";
             this.Còdigo.Name = "Còdigo";
+            this.Còdigo.ReadOnly = true;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Tràmite
             // 
             this.Tràmite.HeaderText = "Tràmite";
             this.Tràmite.Name = "Tràmite";
+            this.Tràmite.ReadOnly = true;
             // 
             // lstDatos
             // 
@@ -104,9 +113,12 @@
             this.lstDatos.Name = "lstDatos";
             this.lstDatos.Size = new System.Drawing.Size(174, 134);
             this.lstDatos.TabIndex = 0;
+            this.lstDatos.SelectedIndexChanged += new System.EventHandler(this.lstDatos_SelectedIndexChanged);
+            this.lstDatos.Enter += new System.EventHandler(this.lstDatos_Enter);
             // 
             // mrcElementoEliminados
             // 
+            this.mrcElementoEliminados.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mrcElementoEliminados.Controls.Add(this.cmdEliminar);
             this.mrcElementoEliminados.Controls.Add(this.txtTramiteEliminar);
             this.mrcElementoEliminados.Controls.Add(this.txtNombreEliminar);
@@ -120,9 +132,11 @@
             this.mrcElementoEliminados.TabIndex = 6;
             this.mrcElementoEliminados.TabStop = false;
             this.mrcElementoEliminados.Text = "Elemento Eliminado";
+            this.mrcElementoEliminados.Enter += new System.EventHandler(this.mrcElementoEliminados_Enter);
             // 
             // cmdEliminar
             // 
+            this.cmdEliminar.Enabled = false;
             this.cmdEliminar.Location = new System.Drawing.Point(76, 132);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(100, 34);
@@ -138,6 +152,7 @@
             this.txtTramiteEliminar.Name = "txtTramiteEliminar";
             this.txtTramiteEliminar.Size = new System.Drawing.Size(100, 20);
             this.txtTramiteEliminar.TabIndex = 11;
+            this.txtTramiteEliminar.TextChanged += new System.EventHandler(this.txtTramiteEliminar_TextChanged);
             // 
             // txtNombreEliminar
             // 
@@ -146,6 +161,7 @@
             this.txtNombreEliminar.Name = "txtNombreEliminar";
             this.txtNombreEliminar.Size = new System.Drawing.Size(100, 20);
             this.txtNombreEliminar.TabIndex = 10;
+            this.txtNombreEliminar.TextChanged += new System.EventHandler(this.txtNombreEliminar_TextChanged);
             // 
             // lblCodigoEliminar
             // 
@@ -163,6 +179,7 @@
             this.txtCodigoEliminar.Name = "txtCodigoEliminar";
             this.txtCodigoEliminar.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoEliminar.TabIndex = 9;
+            this.txtCodigoEliminar.TextChanged += new System.EventHandler(this.txtCodigoEliminar_TextChanged);
             // 
             // lblNombreEliminar
             // 
@@ -197,9 +214,14 @@
             this.mrcNuevoElemento.TabIndex = 5;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
+            this.mrcNuevoElemento.Enter += new System.EventHandler(this.mrcNuevoElemento_Enter);
             // 
             // cmdAgregar
             // 
+            this.cmdAgregar.Enabled = false;
+            this.cmdAgregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.cmdAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.cmdAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.cmdAgregar.Location = new System.Drawing.Point(65, 132);
             this.cmdAgregar.Name = "cmdAgregar";
             this.cmdAgregar.Size = new System.Drawing.Size(100, 34);
@@ -214,6 +236,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(100, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtNombre
             // 
@@ -221,6 +244,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtCodigo
             // 
@@ -228,6 +252,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblTramite
             // 
@@ -270,13 +295,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(604, 398);
             this.Controls.Add(this.mrcListado);
             this.Controls.Add(this.mrcElementoEliminados);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picFoto);
             this.Name = "frmEstructuraPila";
-            this.Text = "frmEstructuraPila";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Estructura Dinàmica Lineal - Pila";
             this.Load += new System.EventHandler(this.frmEstructuraPila_Load);
             this.mrcListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();

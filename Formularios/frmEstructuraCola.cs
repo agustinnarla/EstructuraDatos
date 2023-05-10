@@ -47,15 +47,88 @@ namespace EstructuraDatos
             }
             else
             {
-                txtTramite.Text = "";
-                txtCodigo.Text = "";
-                txtNombre.Text = "";
+                txtTramiteEliminar.Text = "";
+                txtCodigoEliminar.Text = "";
+                txtNombreEliminar.Text = "";
+            }
+        }
+        private void Enabled()
+        {
+            if (txtCodigo.Text != "" & txtNombre.Text != "" & txtTramite.Text != "")
+            {
+                cmdAgregar.Enabled = true;
+            }
+            else
+            {
+                cmdAgregar.Enabled = false;
+            }
+        }
+        private void EnabledEliminar()
+        {
+            if (lstDatos.Items.Count > -1)
+            {
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled = false;
+            }
+        }
+        private void EnabledElimnarTxt()
+        {
+            if (txtCodigoEliminar.Text != "" & txtNombreEliminar.Text != "" & txtTramiteEliminar.Text != "")
+            {
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled = false;
             }
         }
 
         private void frmEstructuraDinamicaLineal_Cola_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void lstDatos_DataSourceChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void lstDatos_Enter(object sender, EventArgs e)
+        {
+            EnabledEliminar();
+        }
+
+        private void txtCodigoEliminar_TextChanged(object sender, EventArgs e)
+        {
+            EnabledElimnarTxt();
+        }
+
+        private void txtNombreEliminar_TextChanged(object sender, EventArgs e)
+        {
+            EnabledElimnarTxt();
+        }
+
+        private void txtTramiteEliminar_TextChanged(object sender, EventArgs e)
+        {
+            EnabledElimnarTxt();
         }
     }
 }

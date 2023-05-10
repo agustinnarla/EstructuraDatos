@@ -21,7 +21,6 @@ namespace EstructuraDatos
         
         private void frmEstructuraPila_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void cmdAgregar_Click(object sender, EventArgs e)
@@ -34,9 +33,14 @@ namespace EstructuraDatos
             objPila.cmdAgregar(objNodo);
             objPila.cmdRecorrer(grlDatos);
             objPila.cmdRecorrer(lstDatos);
+
             txtTramite.Text = "";
             txtCodigo.Text = "";
             txtNombre.Text = "";
+
+            txtNombre.Focus();
+
+           
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
@@ -54,10 +58,98 @@ namespace EstructuraDatos
             }
             else
             {
-                txtTramite.Text = "";
-                txtCodigo.Text = "";
-                txtNombre.Text = "";
+                txtTramiteEliminar.Text = "";
+                txtCodigoEliminar.Text = "";
+                txtNombreEliminar.Text = "";
             }
+        }
+        private void Enabled()
+        {
+            if (txtCodigo.Text != "" & txtNombre.Text != "" & txtTramite.Text != "")
+            {
+                cmdAgregar.Enabled = true;
+            }
+            else
+            {
+                cmdAgregar.Enabled = false;
+            }
+        }
+        private void EnabledEliminar()
+        {
+            if (lstDatos.Items.Count > -1)
+            {
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled = false;
+            }
+        }
+        private void EnabledElimnarTxt()
+        {
+            if (txtCodigoEliminar.Text != "" & txtNombreEliminar.Text != "" & txtTramiteEliminar.Text != "")
+            {
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled = false;
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void grlDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void mrcElementoEliminados_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstDatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lstDatos_Enter(object sender, EventArgs e)
+        {
+            EnabledEliminar();
+        }
+
+        private void txtCodigoEliminar_TextChanged(object sender, EventArgs e)
+        {
+            EnabledElimnarTxt();
+        }
+
+        private void txtNombreEliminar_TextChanged(object sender, EventArgs e)
+        {
+            EnabledElimnarTxt();
+        }
+
+        private void txtTramiteEliminar_TextChanged(object sender, EventArgs e)
+        {
+            EnabledElimnarTxt();
+        }
+
+        private void mrcNuevoElemento_Enter(object sender, EventArgs e)
+        {
+            
         }
     }
 }

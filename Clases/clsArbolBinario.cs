@@ -307,7 +307,25 @@ namespace EstructuraDatos.Clases
 
         public void cmdEliminar(Int32 parCodigo)
         {
-            
+            if (Raiz.Izquierdo == null && Raiz.Derecho == null)
+            {
+                
+            }
+        }
+        public void cmdBuscar(Int32 parCodigo)
+        {
+            clsNodo aux = Raiz;
+            while (aux != null && aux.Codigo != parCodigo)
+            {
+                if (parCodigo < aux.Codigo)
+                {
+                    aux = aux.Izquierdo;
+                }
+                else
+                {
+                    aux = aux.Derecho;
+                }
+            }
         }
     }
 }

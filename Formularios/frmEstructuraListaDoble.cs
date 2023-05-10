@@ -29,9 +29,12 @@ namespace EstructuraDatos.Formularios
             objListaDoble.cmdRecorrer(grlDatos);
             objListaDoble.cmdRecorrer(lstDatos);
             objListaDoble.cmdRecorrer(lstCodigo);
+
             txtTramite.Text = "";
             txtCodigo.Text = "";
             txtNombre.Text = "";
+
+            txtCodigo.Focus();
 
            
         }
@@ -50,7 +53,6 @@ namespace EstructuraDatos.Formularios
                 objListaDoble.cmdRecorrer(lstDatos);
                 objListaDoble.cmdRecorrer(lstCodigo);
 
-
             }
         }
 
@@ -60,6 +62,53 @@ namespace EstructuraDatos.Formularios
         }
 
         private void btnAscendente_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void Enabled()
+        {
+            if (txtCodigo.Text != "" & txtNombre.Text != "" & txtTramite.Text != "")
+            {
+                cmdAgregar.Enabled = true;
+            }
+            else
+            {
+                cmdAgregar.Enabled = false;
+            }
+        }
+        private void EnabledEliminar()
+        {
+            if (lstCodigo.SelectedIndex >= 0)
+            {
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled = false;
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
+
+        private void lstCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnabledEliminar();
+        }
+
+        private void btnDescendente_CheckedChanged(object sender, EventArgs e)
         {
 
         }

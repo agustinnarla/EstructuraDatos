@@ -48,10 +48,10 @@
             this.lblCòdigo = new System.Windows.Forms.Label();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.mrcListarDatos = new System.Windows.Forms.GroupBox();
-            this.btnAscendentePost = new System.Windows.Forms.RadioButton();
-            this.btnAscendentePre = new System.Windows.Forms.RadioButton();
             this.btnDescendente = new System.Windows.Forms.RadioButton();
             this.btnAscendente = new System.Windows.Forms.RadioButton();
+            this.btnAscendentePost = new System.Windows.Forms.RadioButton();
+            this.btnAscendentePre = new System.Windows.Forms.RadioButton();
             this.tvArbol = new System.Windows.Forms.TreeView();
             this.mrcPre = new System.Windows.Forms.GroupBox();
             this.btnDescendentePre = new System.Windows.Forms.RadioButton();
@@ -68,6 +68,8 @@
             // 
             // grlDatos
             // 
+            this.grlDatos.AllowUserToAddRows = false;
+            this.grlDatos.AllowUserToDeleteRows = false;
             this.grlDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grlDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Còdigo,
@@ -75,6 +77,7 @@
             this.Tràmite});
             this.grlDatos.Location = new System.Drawing.Point(198, 345);
             this.grlDatos.Name = "grlDatos";
+            this.grlDatos.ReadOnly = true;
             this.grlDatos.Size = new System.Drawing.Size(385, 134);
             this.grlDatos.TabIndex = 1;
             // 
@@ -82,16 +85,19 @@
             // 
             this.Còdigo.HeaderText = "Còdigo";
             this.Còdigo.Name = "Còdigo";
+            this.Còdigo.ReadOnly = true;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Tràmite
             // 
             this.Tràmite.HeaderText = "Tràmite";
             this.Tràmite.Name = "Tràmite";
+            this.Tràmite.ReadOnly = true;
             // 
             // lstDatos
             // 
@@ -121,6 +127,7 @@
             this.lstCodigo.Name = "lstCodigo";
             this.lstCodigo.Size = new System.Drawing.Size(100, 21);
             this.lstCodigo.TabIndex = 8;
+            this.lstCodigo.SelectedIndexChanged += new System.EventHandler(this.lstCodigo_SelectedIndexChanged);
             // 
             // cmdEliminar
             // 
@@ -173,6 +180,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(100, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtNombre
             // 
@@ -180,6 +188,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtCodigo
             // 
@@ -187,6 +196,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblTramite
             // 
@@ -236,30 +246,6 @@
             this.mrcListarDatos.TabStop = false;
             this.mrcListarDatos.Text = "In orden";
             // 
-            // btnAscendentePost
-            // 
-            this.btnAscendentePost.AutoSize = true;
-            this.btnAscendentePost.Location = new System.Drawing.Point(6, 33);
-            this.btnAscendentePost.Name = "btnAscendentePost";
-            this.btnAscendentePost.Size = new System.Drawing.Size(82, 17);
-            this.btnAscendentePost.TabIndex = 3;
-            this.btnAscendentePost.TabStop = true;
-            this.btnAscendentePost.Text = "Ascendente";
-            this.btnAscendentePost.UseVisualStyleBackColor = true;
-            this.btnAscendentePost.CheckedChanged += new System.EventHandler(this.btnPost_CheckedChanged);
-            // 
-            // btnAscendentePre
-            // 
-            this.btnAscendentePre.AutoSize = true;
-            this.btnAscendentePre.Location = new System.Drawing.Point(6, 33);
-            this.btnAscendentePre.Name = "btnAscendentePre";
-            this.btnAscendentePre.Size = new System.Drawing.Size(82, 17);
-            this.btnAscendentePre.TabIndex = 2;
-            this.btnAscendentePre.TabStop = true;
-            this.btnAscendentePre.Text = "Ascendente";
-            this.btnAscendentePre.UseVisualStyleBackColor = true;
-            this.btnAscendentePre.CheckedChanged += new System.EventHandler(this.btnPreOrden_CheckedChanged);
-            // 
             // btnDescendente
             // 
             this.btnDescendente.AutoSize = true;
@@ -283,6 +269,30 @@
             this.btnAscendente.Text = "Ascendente";
             this.btnAscendente.UseVisualStyleBackColor = true;
             this.btnAscendente.CheckedChanged += new System.EventHandler(this.btnAscendente_CheckedChanged);
+            // 
+            // btnAscendentePost
+            // 
+            this.btnAscendentePost.AutoSize = true;
+            this.btnAscendentePost.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendentePost.Name = "btnAscendentePost";
+            this.btnAscendentePost.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendentePost.TabIndex = 3;
+            this.btnAscendentePost.TabStop = true;
+            this.btnAscendentePost.Text = "Ascendente";
+            this.btnAscendentePost.UseVisualStyleBackColor = true;
+            this.btnAscendentePost.CheckedChanged += new System.EventHandler(this.btnPost_CheckedChanged);
+            // 
+            // btnAscendentePre
+            // 
+            this.btnAscendentePre.AutoSize = true;
+            this.btnAscendentePre.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendentePre.Name = "btnAscendentePre";
+            this.btnAscendentePre.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendentePre.TabIndex = 2;
+            this.btnAscendentePre.TabStop = true;
+            this.btnAscendentePre.Text = "Ascendente";
+            this.btnAscendentePre.UseVisualStyleBackColor = true;
+            this.btnAscendentePre.CheckedChanged += new System.EventHandler(this.btnPreOrden_CheckedChanged);
             // 
             // tvArbol
             // 
@@ -341,6 +351,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(911, 489);
             this.Controls.Add(this.grlDatos);
             this.Controls.Add(this.mrcPro);
@@ -352,6 +363,7 @@
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picFoto);
             this.Name = "frmEstructuraArbolBinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica No Lineal - Arbol Binario";
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();
             this.mrcElementoEliminados.ResumeLayout(false);

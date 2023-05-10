@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstructuraDatos));
             this.Menú = new System.Windows.Forms.MenuStrip();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosProgramadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +47,7 @@
             // 
             // Menú
             // 
+            this.Menú.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Menú.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sistemaToolStripMenuItem,
             this.estructuraLinealToolStripMenuItem,
@@ -98,14 +100,14 @@
             // colaToolStripMenuItem
             // 
             this.colaToolStripMenuItem.Name = "colaToolStripMenuItem";
-            this.colaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colaToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.colaToolStripMenuItem.Text = "Cola";
             this.colaToolStripMenuItem.Click += new System.EventHandler(this.colaToolStripMenuItem_Click);
             // 
             // pilaToolStripMenuItem
             // 
             this.pilaToolStripMenuItem.Name = "pilaToolStripMenuItem";
-            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.pilaToolStripMenuItem.Text = "Pila";
             this.pilaToolStripMenuItem.Click += new System.EventHandler(this.pilaToolStripMenuItem_Click);
             // 
@@ -115,7 +117,7 @@
             this.simpleToolStripMenuItem,
             this.dobleToolStripMenuItem});
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.listaToolStripMenuItem.Text = "Lista ";
             // 
             // simpleToolStripMenuItem
@@ -143,7 +145,7 @@
             // arbolBinarioToolStripMenuItem
             // 
             this.arbolBinarioToolStripMenuItem.Name = "arbolBinarioToolStripMenuItem";
-            this.arbolBinarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arbolBinarioToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.arbolBinarioToolStripMenuItem.Text = "Arbol Binario";
             this.arbolBinarioToolStripMenuItem.Click += new System.EventHandler(this.arbolBinarioToolStripMenuItem_Click);
             // 
@@ -151,6 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Menú);
             this.MainMenuStrip = this.Menú;

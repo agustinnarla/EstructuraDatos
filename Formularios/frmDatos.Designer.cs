@@ -140,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(412, 271);
             this.Controls.Add(this.cmdVolver);
             this.Controls.Add(this.txtMateria);
@@ -152,6 +153,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pickFoto);
             this.Name = "frmDatos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Programador";
             ((System.ComponentModel.ISupportInitialize)(this.pickFoto)).EndInit();
             this.ResumeLayout(false);

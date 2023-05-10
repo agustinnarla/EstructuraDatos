@@ -125,9 +125,11 @@
             this.lstCodigo.Name = "lstCodigo";
             this.lstCodigo.Size = new System.Drawing.Size(100, 21);
             this.lstCodigo.TabIndex = 8;
+            this.lstCodigo.SelectedIndexChanged += new System.EventHandler(this.lstCodigo_SelectedIndexChanged);
             // 
             // cmdEliminar
             // 
+            this.cmdEliminar.Enabled = false;
             this.cmdEliminar.Location = new System.Drawing.Point(76, 68);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(100, 34);
@@ -163,6 +165,7 @@
             // 
             // cmdAgregar
             // 
+            this.cmdAgregar.Enabled = false;
             this.cmdAgregar.Location = new System.Drawing.Point(65, 132);
             this.cmdAgregar.Name = "cmdAgregar";
             this.cmdAgregar.Size = new System.Drawing.Size(100, 34);
@@ -177,6 +180,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(100, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtNombre
             // 
@@ -184,6 +188,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtCodigo
             // 
@@ -191,6 +196,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblTramite
             // 
@@ -251,6 +257,7 @@
             this.btnDescendente.TabStop = true;
             this.btnDescendente.Text = "Descendente";
             this.btnDescendente.UseVisualStyleBackColor = true;
+            this.btnDescendente.CheckedChanged += new System.EventHandler(this.btnDescendente_CheckedChanged);
             // 
             // btnAscendente
             // 
@@ -268,6 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(594, 399);
             this.Controls.Add(this.mrcListarDatos);
             this.Controls.Add(this.mrcListado);

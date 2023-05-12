@@ -189,6 +189,7 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCodigo
             // 
@@ -283,6 +284,7 @@
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picFoto);
             this.Name = "frmEstructuraListaDoble";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinàmica Lineal - Lista Doble ";
             this.mrcListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();

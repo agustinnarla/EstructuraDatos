@@ -20,21 +20,33 @@ namespace EstructuraDatos.Formularios
         Clases.clsListaSimple objListaSimple = new Clases.clsListaSimple();
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                clsNodo objNodo = new clsNodo();
+                objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+                objNodo.Nombre = txtNombre.Text;
+                objNodo.Tramite = txtTramite.Text;
 
-            clsNodo objNodo = new clsNodo();
-            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            objNodo.Nombre = txtNombre.Text;
-            objNodo.Tramite = txtTramite.Text;
+                objListaSimple.cmdAgregar(objNodo);
+                objListaSimple.cmdRecorrer(grlDatos);
+                objListaSimple.cmdRecorrer(lstDatos);
+                objListaSimple.cmdRecorrer(lstCodigo);
+                txtTramite.Text = "";
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
+                txtCodigo.Focus();
+            }
+            catch (Exception Mensajito)
+            {
+                MessageBox.Show(Mensajito.Message);
+                txtTramite.Text = "";
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
 
-            objListaSimple.cmdAgregar(objNodo);
-            objListaSimple.cmdRecorrer(grlDatos);
-            objListaSimple.cmdRecorrer(lstDatos);
-            objListaSimple.cmdRecorrer(lstCodigo);
-            txtTramite.Text = "";
-            txtCodigo.Text = "";
-            txtNombre.Text = "";
+            }
 
-         
+
+
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
@@ -103,6 +115,20 @@ namespace EstructuraDatos.Formularios
         private void lstCodigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             EnabledEliminar();
+        }
+        private void KeyLetras(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+                KeyLetras(sender, e);
+            
         }
     }
 }

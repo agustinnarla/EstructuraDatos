@@ -22,6 +22,7 @@ namespace EstructuraDatos.Clases
 
         }
 
+        //Agregar Nodo
         public void cmdAgregar(clsNodo Nvo)
         {
             Nvo.Izquierdo = null;
@@ -57,6 +58,8 @@ namespace EstructuraDatos.Clases
 
             }
         }
+
+        //Recorridos
         public void cmdRecorrer(ListBox Lista)
         {
             Lista.Items.Clear();
@@ -72,6 +75,13 @@ namespace EstructuraDatos.Clases
             Combo.Items.Clear();
             InOrdenAsc(Combo, Raiz);
         }
+        public void cmdRecorrerTreeView(TreeView TreeView)
+        {
+            TreeView.Nodes.Clear();
+            InOrdenAsc(TreeView.Nodes, Raiz);
+        }
+
+
 
         public void cmdRecorrerDsc(ListBox Lista)
         {
@@ -88,6 +98,8 @@ namespace EstructuraDatos.Clases
             Combo.Items.Clear();
             InOrdenDsc(Combo, Raiz);
         }
+        
+        
 
         public void cmdRecorrerPre(ListBox Lista)
         {
@@ -157,16 +169,15 @@ namespace EstructuraDatos.Clases
         public void InOrdenAsc(ListBox Lst, clsNodo R)
         {
             if (R.Izquierdo != null) InOrdenAsc(Lst, R.Izquierdo);
-            Lst.Items.Add(R.Codigo);
+            Lst.Items.Add(R.Codigo + " " + R.Nombre + " " + R.Tramite);
             if(R.Derecho != null) InOrdenAsc(Lst, R.Derecho);
         }
         public void InOrdenAsc(DataGridView Grl, clsNodo R)
         {
-            if (R.Izquierdo != null) InOrdenAsc(Grl, R.Izquierdo);
-            //DataGridView row = new DataGridView();
-            //row.CreateCell(Grl, R.Codigo, R.Nombre, R.Tramite);
-            Grl.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
-            if (R.Derecho != null) InOrdenAsc(Grl, R.Derecho);
+             if (R.Izquierdo != null) InOrdenAsc(Grl, R.Izquierdo);
+              Grl.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+             if (R.Derecho != null) InOrdenAsc(Grl, R.Derecho);
+           
         }
         public void InOrdenAsc(ComboBox Combo, clsNodo R)
         {
@@ -174,11 +185,20 @@ namespace EstructuraDatos.Clases
             Combo.Items.Add(R.Codigo);
             if (R.Derecho != null) InOrdenAsc(Combo, R.Derecho);
         }
+        public void InOrdenAsc(TreeNodeCollection NodoPadre, clsNodo R)
+        {
+            if (Raiz != null)
+            {
+                TreeNode NodoNuevo = NodoPadre.Add(R.Codigo.ToString());
+                if (R.Izquierdo != null) InOrdenAsc(NodoNuevo.Nodes, R.Izquierdo);
+                if (R.Derecho != null) InOrdenAsc(NodoNuevo.Nodes, R.Derecho);
+            }
+        }
 
         public void InOrdenDsc(ListBox Lst, clsNodo R)
         {
             if (R.Derecho != null) InOrdenDsc(Lst, R.Derecho);
-            Lst.Items.Add(R.Codigo);
+            Lst.Items.Add(R.Codigo + " " + R.Nombre + " " + R.Tramite);
             if (R.Izquierdo != null) InOrdenDsc(Lst, R.Izquierdo);
         }
         public void InOrdenDsc(DataGridView Grl, clsNodo R)
@@ -197,7 +217,7 @@ namespace EstructuraDatos.Clases
 
         public void PreOrden(ListBox Lst, clsNodo R)
         {
-            Lst.Items.Add(R.Codigo);
+            Lst.Items.Add(R.Codigo + " " + R.Nombre + " " + R.Tramite);
             if (R.Izquierdo != null) PreOrden(Lst, R.Izquierdo);
             if (R.Derecho != null) PreOrden(Lst, R.Derecho);
         }
@@ -216,7 +236,7 @@ namespace EstructuraDatos.Clases
 
         public void PreOrdenDsc(ListBox Lst, clsNodo R) 
         {
-            Lst.Items.Add(R.Codigo);
+            Lst.Items.Add(R.Codigo + " " + R.Nombre + " " + R.Tramite);
             if (R.Derecho != null) PreOrdenDsc(Lst, R.Derecho);
             if (R.Izquierdo != null) PreOrdenDsc(Lst, R.Izquierdo);
         }
@@ -238,7 +258,7 @@ namespace EstructuraDatos.Clases
         {
             if (R.Izquierdo != null) PostOrden(Lst, R.Izquierdo);
             if (R.Derecho != null) PostOrden(Lst, R.Derecho);
-            Lst.Items.Add(R.Codigo);
+            Lst.Items.Add(R.Codigo + " " + R.Nombre + " " + R.Tramite);
         }
         public void PostOrden(DataGridView Grl, clsNodo R)
         {
@@ -257,7 +277,7 @@ namespace EstructuraDatos.Clases
         {
             if (R.Derecho != null) PostOrdenDsc(Lst, R.Derecho);
             if (R.Izquierdo != null) PostOrdenDsc(Lst, R.Izquierdo);
-            Lst.Items.Add(R.Codigo);
+            Lst.Items.Add(R.Codigo + " " + R.Nombre + " " + R.Tramite);
         }
         public void PostOrdenDsc(DataGridView Grl, clsNodo R)
         {
@@ -284,9 +304,12 @@ namespace EstructuraDatos.Clases
             {
                 cmdCargarVecotrInOrden(NodoPadre.Derecho);
             }
+
         }
+        
         public void cmdEquilibrar()
         {
+            
             varIndice = 0;
             cmdCargarVecotrInOrden(Raiz);
             Raiz = null;
@@ -307,25 +330,46 @@ namespace EstructuraDatos.Clases
 
         public void cmdEliminar(Int32 parCodigo)
         {
-            if (Raiz.Izquierdo == null && Raiz.Derecho == null)
+            //Error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            clsNodo NodoEliminar = Raiz;
+            varIndice = 0;
+            cmdCargarVectorEliminar(NodoEliminar, parCodigo);
+            Raiz = null;
+            if (varIndice >= 0)
             {
-                
+                cmdEquilibrarArbol(0, varIndice - 1);
             }
         }
-        public void cmdBuscar(Int32 parCodigo)
+        public void cmdCargarVectorEliminar(clsNodo NodoPadre, Int32 parCodigo)
+        {
+            
+            if (NodoPadre.Izquierdo != null)
+            {
+                cmdCargarVectorEliminar(NodoPadre.Izquierdo, parCodigo);
+            }
+            if (NodoPadre.Codigo != parCodigo)
+            {
+                vecNodo[varIndice] = NodoPadre;
+                varIndice++;
+            }
+            if (NodoPadre.Derecho != null)
+            {
+                cmdCargarVectorEliminar(NodoPadre.Derecho, parCodigo);
+            }
+
+        }
+        public clsNodo cmdBuscar(Int32 parCodigo)
         {
             clsNodo aux = Raiz;
-            while (aux != null && aux.Codigo != parCodigo)
+            while (aux != null)
             {
-                if (parCodigo < aux.Codigo)
-                {
-                    aux = aux.Izquierdo;
-                }
-                else
-                {
-                    aux = aux.Derecho;
-                }
+                if (parCodigo == aux.Codigo) break;
+                if (parCodigo < aux.Codigo) aux = aux.Izquierdo;
+                else aux = aux.Derecho;
             }
+
+            return aux;
         }
     }
 }

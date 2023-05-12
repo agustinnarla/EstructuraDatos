@@ -20,23 +20,35 @@ namespace EstructuraDatos.Formularios
 
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo = new clsNodo();
-            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            objNodo.Nombre = txtNombre.Text;
-            objNodo.Tramite = txtTramite.Text;
+            try
+            {
+                clsNodo objNodo = new clsNodo();
+                objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+                objNodo.Nombre = txtNombre.Text;
+                objNodo.Tramite = txtTramite.Text;
 
-            objListaDoble.cmdAgregar(objNodo);
-            objListaDoble.cmdRecorrer(grlDatos);
-            objListaDoble.cmdRecorrer(lstDatos);
-            objListaDoble.cmdRecorrer(lstCodigo);
+                objListaDoble.cmdAgregar(objNodo);
+                objListaDoble.cmdRecorrer(grlDatos);
+                objListaDoble.cmdRecorrer(lstDatos);
+                objListaDoble.cmdRecorrer(lstCodigo);
 
-            txtTramite.Text = "";
-            txtCodigo.Text = "";
-            txtNombre.Text = "";
+                txtTramite.Text = "";
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
 
-            txtCodigo.Focus();
+                txtCodigo.Focus();
+            }
+            catch (Exception Mensajito)
+            {
+                MessageBox.Show(Mensajito.Message);
+                txtTramite.Text = "";
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
 
-           
+            }
+
+
+
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
@@ -63,7 +75,9 @@ namespace EstructuraDatos.Formularios
 
         private void btnAscendente_CheckedChanged(object sender, EventArgs e)
         {
-
+            objListaDoble.cmdRecorrer(grlDatos);
+            objListaDoble.cmdRecorrer(lstDatos);
+            objListaDoble.cmdRecorrer(lstCodigo);
         }
         private void Enabled()
         {
@@ -110,7 +124,21 @@ namespace EstructuraDatos.Formularios
 
         private void btnDescendente_CheckedChanged(object sender, EventArgs e)
         {
+            objListaDoble.cmdRecorrerDsc(grlDatos);
+            objListaDoble.cmdRecorrerDsc(lstDatos);
+            objListaDoble.cmdRecorrerDsc(lstCodigo);
+        }
+        private void KeyLetras(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyLetras(sender, e);
         }
     }
 }

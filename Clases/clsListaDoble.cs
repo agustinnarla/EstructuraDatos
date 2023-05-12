@@ -142,5 +142,36 @@ namespace EstructuraDatos.Clases
                 aux = aux.Siguiente;
             }
         }
+        public void cmdRecorrerDsc(DataGridView Grilla)
+        {
+            clsNodo aux = Ultimo;
+            Grilla.Rows.Clear();
+
+            while (aux != null)
+            {
+                Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+        public void cmdRecorrerDsc(ListBox Lista)
+        {
+            clsNodo aux = Ultimo;
+            Lista.Items.Clear();
+            while (aux != null)
+            {
+                Lista.Items.Add(aux.Codigo + " " + aux.Nombre + " " + aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+        public void cmdRecorrerDsc(ComboBox Combo)
+        {
+            clsNodo aux = Ultimo;
+            Combo.Items.Clear();
+            while (aux != null)
+            {
+                Combo.Items.Add(aux.Nombre);
+                aux = aux.Anterior;
+            }
+        }
     }
 }

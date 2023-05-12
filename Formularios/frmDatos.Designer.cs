@@ -46,10 +46,10 @@
             // 
             this.pickFoto.Image = ((System.Drawing.Image)(resources.GetObject("pickFoto.Image")));
             this.pickFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFoto.InitialImage")));
-            this.pickFoto.Location = new System.Drawing.Point(40, 34);
+            this.pickFoto.Location = new System.Drawing.Point(12, 26);
             this.pickFoto.Name = "pickFoto";
-            this.pickFoto.Size = new System.Drawing.Size(159, 177);
-            this.pickFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFoto.Size = new System.Drawing.Size(201, 215);
+            this.pickFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pickFoto.TabIndex = 0;
             this.pickFoto.TabStop = false;
             // 

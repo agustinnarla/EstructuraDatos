@@ -25,22 +25,35 @@ namespace EstructuraDatos
 
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo objNodo = new clsNodo();
-            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            objNodo.Nombre = txtNombre.Text;
-            objNodo.Tramite = txtTramite.Text;
+            try
+            {
+                clsNodo objNodo = new clsNodo();
+                objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+                objNodo.Nombre = txtNombre.Text;
+                objNodo.Tramite = txtTramite.Text;
 
-            objPila.cmdAgregar(objNodo);
-            objPila.cmdRecorrer(grlDatos);
-            objPila.cmdRecorrer(lstDatos);
+                objPila.cmdAgregar(objNodo);
+                objPila.cmdRecorrer(grlDatos);
+                objPila.cmdRecorrer(lstDatos);
 
-            txtTramite.Text = "";
-            txtCodigo.Text = "";
-            txtNombre.Text = "";
+                txtTramite.Text = "";
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
 
-            txtNombre.Focus();
+                txtNombre.Focus();
+            }
+            catch (Exception Mensajito)
+            {
 
-           
+                MessageBox.Show(Mensajito.Message);
+                txtTramite.Text = "";
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
+
+            }
+
+
+
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
@@ -150,6 +163,18 @@ namespace EstructuraDatos
         private void mrcNuevoElemento_Enter(object sender, EventArgs e)
         {
             
+        }
+        private void KeyLetras(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyLetras(sender, e);
         }
     }
 }

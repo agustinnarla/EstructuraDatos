@@ -39,6 +39,7 @@
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.lblCodigoEliminar = new System.Windows.Forms.Label();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
+            this.lblAyuda = new System.Windows.Forms.Label();
             this.cmdAgregar = new System.Windows.Forms.Button();
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -52,11 +53,19 @@
             this.btnAscendente = new System.Windows.Forms.RadioButton();
             this.btnAscendentePost = new System.Windows.Forms.RadioButton();
             this.btnAscendentePre = new System.Windows.Forms.RadioButton();
-            this.tvArbol = new System.Windows.Forms.TreeView();
             this.mrcPre = new System.Windows.Forms.GroupBox();
             this.btnDescendentePre = new System.Windows.Forms.RadioButton();
             this.mrcPro = new System.Windows.Forms.GroupBox();
             this.btnDescendentePost = new System.Windows.Forms.RadioButton();
+            this.tvArbolito = new System.Windows.Forms.TreeView();
+            this.cmdBuscar = new System.Windows.Forms.Button();
+            this.mrcBusqueda = new System.Windows.Forms.GroupBox();
+            this.lstCodigoInfo = new System.Windows.Forms.ComboBox();
+            this.txtTramiteInfo = new System.Windows.Forms.TextBox();
+            this.txtNombreInfo = new System.Windows.Forms.TextBox();
+            this.lblCodigoInfo = new System.Windows.Forms.Label();
+            this.lblTramiteInfo = new System.Windows.Forms.Label();
+            this.lblNombreInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).BeginInit();
             this.mrcElementoEliminados.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
@@ -64,6 +73,7 @@
             this.mrcListarDatos.SuspendLayout();
             this.mrcPre.SuspendLayout();
             this.mrcPro.SuspendLayout();
+            this.mrcBusqueda.SuspendLayout();
             this.SuspendLayout();
             // 
             // grlDatos
@@ -75,7 +85,7 @@
             this.Còdigo,
             this.Nombre,
             this.Tràmite});
-            this.grlDatos.Location = new System.Drawing.Point(198, 345);
+            this.grlDatos.Location = new System.Drawing.Point(198, 447);
             this.grlDatos.Name = "grlDatos";
             this.grlDatos.ReadOnly = true;
             this.grlDatos.Size = new System.Drawing.Size(385, 134);
@@ -102,10 +112,11 @@
             // lstDatos
             // 
             this.lstDatos.FormattingEnabled = true;
-            this.lstDatos.Location = new System.Drawing.Point(12, 241);
+            this.lstDatos.Location = new System.Drawing.Point(12, 237);
             this.lstDatos.Name = "lstDatos";
-            this.lstDatos.Size = new System.Drawing.Size(174, 238);
+            this.lstDatos.Size = new System.Drawing.Size(174, 342);
             this.lstDatos.TabIndex = 0;
+            this.lstDatos.SelectedIndexChanged += new System.EventHandler(this.lstDatos_SelectedIndexChanged);
             // 
             // mrcElementoEliminados
             // 
@@ -131,6 +142,7 @@
             // 
             // cmdEliminar
             // 
+            this.cmdEliminar.Enabled = false;
             this.cmdEliminar.Location = new System.Drawing.Point(216, 31);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(100, 34);
@@ -150,6 +162,7 @@
             // 
             // mrcNuevoElemento
             // 
+            this.mrcNuevoElemento.Controls.Add(this.lblAyuda);
             this.mrcNuevoElemento.Controls.Add(this.cmdAgregar);
             this.mrcNuevoElemento.Controls.Add(this.txtTramite);
             this.mrcNuevoElemento.Controls.Add(this.txtNombre);
@@ -164,9 +177,21 @@
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
             // 
+            // lblAyuda
+            // 
+            this.lblAyuda.AutoSize = true;
+            this.lblAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAyuda.Location = new System.Drawing.Point(59, 188);
+            this.lblAyuda.Name = "lblAyuda";
+            this.lblAyuda.Size = new System.Drawing.Size(110, 13);
+            this.lblAyuda.TabIndex = 7;
+            this.lblAyuda.Text = "¡Click para ayuda!";
+            this.lblAyuda.Click += new System.EventHandler(this.lblAyuda_Click);
+            this.lblAyuda.MouseCaptureChanged += new System.EventHandler(this.lblAyuda_MouseCaptureChanged);
+            // 
             // cmdAgregar
             // 
-            this.cmdAgregar.Location = new System.Drawing.Point(65, 150);
+            this.cmdAgregar.Location = new System.Drawing.Point(65, 132);
             this.cmdAgregar.Name = "cmdAgregar";
             this.cmdAgregar.Size = new System.Drawing.Size(100, 34);
             this.cmdAgregar.TabIndex = 6;
@@ -189,6 +214,7 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCodigo
             // 
@@ -230,7 +256,7 @@
             this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
             this.picFoto.Location = new System.Drawing.Point(12, 12);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(180, 219);
+            this.picFoto.Size = new System.Drawing.Size(174, 219);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 12;
             this.picFoto.TabStop = false;
@@ -239,12 +265,14 @@
             // 
             this.mrcListarDatos.Controls.Add(this.btnDescendente);
             this.mrcListarDatos.Controls.Add(this.btnAscendente);
+            this.mrcListarDatos.Enabled = false;
             this.mrcListarDatos.Location = new System.Drawing.Point(379, 12);
             this.mrcListarDatos.Name = "mrcListarDatos";
             this.mrcListarDatos.Size = new System.Drawing.Size(201, 68);
             this.mrcListarDatos.TabIndex = 17;
             this.mrcListarDatos.TabStop = false;
             this.mrcListarDatos.Text = "In orden";
+            this.mrcListarDatos.Enter += new System.EventHandler(this.mrcListarDatos_Enter);
             // 
             // btnDescendente
             // 
@@ -294,23 +322,18 @@
             this.btnAscendentePre.UseVisualStyleBackColor = true;
             this.btnAscendentePre.CheckedChanged += new System.EventHandler(this.btnPreOrden_CheckedChanged);
             // 
-            // tvArbol
-            // 
-            this.tvArbol.Location = new System.Drawing.Point(589, 21);
-            this.tvArbol.Name = "tvArbol";
-            this.tvArbol.Size = new System.Drawing.Size(292, 458);
-            this.tvArbol.TabIndex = 18;
-            // 
             // mrcPre
             // 
             this.mrcPre.Controls.Add(this.btnDescendentePre);
             this.mrcPre.Controls.Add(this.btnAscendentePre);
+            this.mrcPre.Enabled = false;
             this.mrcPre.Location = new System.Drawing.Point(379, 89);
             this.mrcPre.Name = "mrcPre";
             this.mrcPre.Size = new System.Drawing.Size(201, 68);
             this.mrcPre.TabIndex = 18;
             this.mrcPre.TabStop = false;
             this.mrcPre.Text = "Pre Orden";
+            this.mrcPre.Enter += new System.EventHandler(this.mrcPre_Enter);
             // 
             // btnDescendentePre
             // 
@@ -328,12 +351,14 @@
             // 
             this.mrcPro.Controls.Add(this.btnDescendentePost);
             this.mrcPro.Controls.Add(this.btnAscendentePost);
+            this.mrcPro.Enabled = false;
             this.mrcPro.Location = new System.Drawing.Point(379, 163);
             this.mrcPro.Name = "mrcPro";
             this.mrcPro.Size = new System.Drawing.Size(201, 68);
             this.mrcPro.TabIndex = 19;
             this.mrcPro.TabStop = false;
             this.mrcPro.Text = "Post Orden";
+            this.mrcPro.Enter += new System.EventHandler(this.mrcPro_Enter);
             // 
             // btnDescendentePost
             // 
@@ -347,17 +372,105 @@
             this.btnDescendentePost.UseVisualStyleBackColor = true;
             this.btnDescendentePost.CheckedChanged += new System.EventHandler(this.btnDescendentePost_CheckedChanged);
             // 
+            // tvArbolito
+            // 
+            this.tvArbolito.Location = new System.Drawing.Point(601, 12);
+            this.tvArbolito.Name = "tvArbolito";
+            this.tvArbolito.Size = new System.Drawing.Size(313, 569);
+            this.tvArbolito.TabIndex = 20;
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Enabled = false;
+            this.cmdBuscar.Location = new System.Drawing.Point(216, 28);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(100, 34);
+            this.cmdBuscar.TabIndex = 21;
+            this.cmdBuscar.Text = "Buscar";
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
+            // 
+            // mrcBusqueda
+            // 
+            this.mrcBusqueda.Controls.Add(this.lstCodigoInfo);
+            this.mrcBusqueda.Controls.Add(this.txtTramiteInfo);
+            this.mrcBusqueda.Controls.Add(this.txtNombreInfo);
+            this.mrcBusqueda.Controls.Add(this.lblCodigoInfo);
+            this.mrcBusqueda.Controls.Add(this.lblTramiteInfo);
+            this.mrcBusqueda.Controls.Add(this.cmdBuscar);
+            this.mrcBusqueda.Controls.Add(this.lblNombreInfo);
+            this.mrcBusqueda.Location = new System.Drawing.Point(198, 327);
+            this.mrcBusqueda.Name = "mrcBusqueda";
+            this.mrcBusqueda.Size = new System.Drawing.Size(385, 114);
+            this.mrcBusqueda.TabIndex = 15;
+            this.mrcBusqueda.TabStop = false;
+            this.mrcBusqueda.Text = "Busqueda";
+            // 
+            // lstCodigoInfo
+            // 
+            this.lstCodigoInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lstCodigoInfo.FormattingEnabled = true;
+            this.lstCodigoInfo.Location = new System.Drawing.Point(75, 28);
+            this.lstCodigoInfo.Name = "lstCodigoInfo";
+            this.lstCodigoInfo.Size = new System.Drawing.Size(105, 21);
+            this.lstCodigoInfo.TabIndex = 9;
+            this.lstCodigoInfo.SelectedIndexChanged += new System.EventHandler(this.lstCodigoInfo_SelectedIndexChanged);
+            // 
+            // txtTramiteInfo
+            // 
+            this.txtTramiteInfo.Enabled = false;
+            this.txtTramiteInfo.Location = new System.Drawing.Point(76, 85);
+            this.txtTramiteInfo.Name = "txtTramiteInfo";
+            this.txtTramiteInfo.Size = new System.Drawing.Size(104, 20);
+            this.txtTramiteInfo.TabIndex = 8;
+            // 
+            // txtNombreInfo
+            // 
+            this.txtNombreInfo.Enabled = false;
+            this.txtNombreInfo.Location = new System.Drawing.Point(76, 57);
+            this.txtNombreInfo.Name = "txtNombreInfo";
+            this.txtNombreInfo.Size = new System.Drawing.Size(104, 20);
+            this.txtNombreInfo.TabIndex = 7;
+            // 
+            // lblCodigoInfo
+            // 
+            this.lblCodigoInfo.AutoSize = true;
+            this.lblCodigoInfo.Location = new System.Drawing.Point(15, 33);
+            this.lblCodigoInfo.Name = "lblCodigoInfo";
+            this.lblCodigoInfo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigoInfo.TabIndex = 25;
+            this.lblCodigoInfo.Text = "Còdigo:";
+            // 
+            // lblTramiteInfo
+            // 
+            this.lblTramiteInfo.AutoSize = true;
+            this.lblTramiteInfo.Location = new System.Drawing.Point(13, 89);
+            this.lblTramiteInfo.Name = "lblTramiteInfo";
+            this.lblTramiteInfo.Size = new System.Drawing.Size(45, 13);
+            this.lblTramiteInfo.TabIndex = 23;
+            this.lblTramiteInfo.Text = "Trámite:";
+            // 
+            // lblNombreInfo
+            // 
+            this.lblNombreInfo.AutoSize = true;
+            this.lblNombreInfo.Location = new System.Drawing.Point(13, 61);
+            this.lblNombreInfo.Name = "lblNombreInfo";
+            this.lblNombreInfo.Size = new System.Drawing.Size(47, 13);
+            this.lblNombreInfo.TabIndex = 6;
+            this.lblNombreInfo.Text = "Nombre:";
+            // 
             // frmEstructuraArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(911, 489);
+            this.ClientSize = new System.Drawing.Size(923, 588);
+            this.Controls.Add(this.mrcBusqueda);
+            this.Controls.Add(this.tvArbolito);
             this.Controls.Add(this.grlDatos);
             this.Controls.Add(this.mrcPro);
             this.Controls.Add(this.lstDatos);
             this.Controls.Add(this.mrcPre);
-            this.Controls.Add(this.tvArbol);
             this.Controls.Add(this.mrcListarDatos);
             this.Controls.Add(this.mrcElementoEliminados);
             this.Controls.Add(this.mrcNuevoElemento);
@@ -365,6 +478,7 @@
             this.Name = "frmEstructuraArbolBinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica No Lineal - Arbol Binario";
+            this.Load += new System.EventHandler(this.frmEstructuraArbolBinario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();
             this.mrcElementoEliminados.ResumeLayout(false);
             this.mrcElementoEliminados.PerformLayout();
@@ -377,6 +491,8 @@
             this.mrcPre.PerformLayout();
             this.mrcPro.ResumeLayout(false);
             this.mrcPro.PerformLayout();
+            this.mrcBusqueda.ResumeLayout(false);
+            this.mrcBusqueda.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -405,10 +521,19 @@
         private System.Windows.Forms.RadioButton btnAscendente;
         private System.Windows.Forms.RadioButton btnAscendentePost;
         private System.Windows.Forms.RadioButton btnAscendentePre;
-        private System.Windows.Forms.TreeView tvArbol;
         private System.Windows.Forms.GroupBox mrcPre;
         private System.Windows.Forms.RadioButton btnDescendentePre;
         private System.Windows.Forms.GroupBox mrcPro;
         private System.Windows.Forms.RadioButton btnDescendentePost;
+        private System.Windows.Forms.TreeView tvArbolito;
+        private System.Windows.Forms.Button cmdBuscar;
+        private System.Windows.Forms.GroupBox mrcBusqueda;
+        private System.Windows.Forms.Label lblNombreInfo;
+        private System.Windows.Forms.Label lblTramiteInfo;
+        private System.Windows.Forms.Label lblCodigoInfo;
+        private System.Windows.Forms.TextBox txtTramiteInfo;
+        private System.Windows.Forms.TextBox txtNombreInfo;
+        private System.Windows.Forms.ComboBox lstCodigoInfo;
+        private System.Windows.Forms.Label lblAyuda;
     }
 }

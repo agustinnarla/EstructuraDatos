@@ -58,5 +58,11 @@ namespace EstructuraDatos
             Formularios.frmEstructuraArbolBinario objEstructuraArbolBinario = new Formularios.frmEstructuraArbolBinario();
             objEstructuraArbolBinario.Show();
         }
+
+        private void operacionesDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.frmBaseDatos objBaseDatos = new Formularios.frmBaseDatos();
+            objBaseDatos.Show();
+        }
     }
 }

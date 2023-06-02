@@ -31,7 +31,15 @@ namespace EstructuraDatos.Formularios
 
         private void cmdJuntar_Click(object sender, EventArgs e)
         {
-           
+            //String varSql = "SELECT TITULO,NOMBRE " +
+            //    " FROM Libro, PAIS " +
+            //    " WHERE Libro.IDPAIS = PAIS.IDPAIS ";
+
+            String varSql = "SELECT TITULO,NOMBRE " +
+                " FROM Libro inner join PAIS " +
+                " on Libro.IDPAIS = PAIS.IDPAIS ";
+
+            objBaseDatos.cmdListar(grlDatos, varSql);
         }
 
         private void cmdSeleccionSimple_Click(object sender, EventArgs e)
@@ -46,6 +54,13 @@ namespace EstructuraDatos.Formularios
             String varSql = "SELECT * FROM Libro where IdIdioma = 1 AND IdLibro > 30";
             objBaseDatos.cmdListar(grlDatos, varSql);
         }
+        private void cmdSeleccionConvolucion_Click(object sender, EventArgs e)
+        {
+            String varSql = "SELECT * " + 
+                " FROM  (select * from Libro where idIdioma > 1) as X " + 
+                " WHERE IdPais =  2 ";
+            objBaseDatos.cmdListar(grlDatos, varSql);
+        }
         private void cmdUnion_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT * FROM Libro where IdIdioma = 2" +
@@ -54,16 +69,12 @@ namespace EstructuraDatos.Formularios
             objBaseDatos.cmdListar(grlDatos, varSql);
         }
 
-        private void cmdSeleccionConvolucion_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmdInterseccion_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT * FROM Libro " +
-                " where IdAutor=5 and exists " +
-                " (SELECT * FROM Libro where IdIdioma = 3 )";
+                " where IdIdioma=2 and IdLibro  in " +
+                " (SELECT IdLibro FROM Libro where IdPais =3 )" +
+                " order by 1 asc";
             objBaseDatos.cmdListar(grlDatos, varSql);
         }
 

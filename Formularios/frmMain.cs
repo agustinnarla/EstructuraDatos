@@ -64,5 +64,11 @@ namespace EstructuraDatos
             Formularios.frmBaseDatos objBaseDatos = new Formularios.frmBaseDatos();
             objBaseDatos.Show();
         }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.frmBaseDatosConsulta objConsulta = new Formularios.frmBaseDatosConsulta();
+            objConsulta.Show();
+        }
     }
 }

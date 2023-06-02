@@ -71,6 +71,7 @@ namespace EstructuraDatos.Clases
             catch (Exception Mensajito)
             {
                 MessageBox.Show(Mensajito.Message);
+                conexion.Close();
             }
         }
 

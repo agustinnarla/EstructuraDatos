@@ -28,70 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lstOperaciones = new System.Windows.Forms.ComboBox();
+            this.cmdListar = new System.Windows.Forms.Button();
+            this.lblOperaciones = new System.Windows.Forms.Label();
+            this.grlDatos = new System.Windows.Forms.DataGridView();
+            this.lblInfo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // lstOperaciones
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(480, 21);
-            this.comboBox1.TabIndex = 0;
+            this.lstOperaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lstOperaciones.FormattingEnabled = true;
+            this.lstOperaciones.Items.AddRange(new object[] {
+            "Diferencia",
+            "Intersección",
+            "Union",
+            "Juntar",
+            "Proyección Simple",
+            "Proyección Multiatributo",
+            "Selección Simple",
+            "Selección Multiatributo con operador AND",
+            "Selección Multiatributo con operador OR",
+            "Selección Multiatributo con CONVOLUCION"});
+            this.lstOperaciones.Location = new System.Drawing.Point(261, 16);
+            this.lstOperaciones.Name = "lstOperaciones";
+            this.lstOperaciones.Size = new System.Drawing.Size(319, 21);
+            this.lstOperaciones.TabIndex = 0;
+            this.lstOperaciones.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button1
+            // cmdListar
             // 
-            this.button1.Location = new System.Drawing.Point(621, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 25);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdListar.Location = new System.Drawing.Point(586, 13);
+            this.cmdListar.Name = "cmdListar";
+            this.cmdListar.Size = new System.Drawing.Size(113, 25);
+            this.cmdListar.TabIndex = 1;
+            this.cmdListar.Text = "Listar";
+            this.cmdListar.UseVisualStyleBackColor = true;
+            this.cmdListar.Click += new System.EventHandler(this.cmdListar_Click);
             // 
-            // label1
+            // lblOperaciones
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.lblOperaciones.AutoSize = true;
+            this.lblOperaciones.Location = new System.Drawing.Point(44, 19);
+            this.lblOperaciones.Name = "lblOperaciones";
+            this.lblOperaciones.Size = new System.Drawing.Size(211, 13);
+            this.lblOperaciones.TabIndex = 2;
+            this.lblOperaciones.Text = "Operaciónes a realizar en la base de datos:";
             // 
-            // dataGridView1
+            // grlDatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 204);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(694, 214);
-            this.dataGridView1.TabIndex = 3;
+            this.grlDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grlDatos.Location = new System.Drawing.Point(47, 198);
+            this.grlDatos.Name = "grlDatos";
+            this.grlDatos.Size = new System.Drawing.Size(652, 214);
+            this.grlDatos.TabIndex = 3;
             // 
-            // label2
+            // lblInfo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInfo.Location = new System.Drawing.Point(44, 66);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(655, 112);
+            this.lblInfo.TabIndex = 4;
             // 
             // frmRepasoDeOperaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(719, 450);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.grlDatos);
+            this.Controls.Add(this.lblOperaciones);
+            this.Controls.Add(this.cmdListar);
+            this.Controls.Add(this.lstOperaciones);
             this.Name = "frmRepasoDeOperaciones";
             this.Text = "Repaso Operaciones";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmRepasoDeOperaciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,10 +113,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox lstOperaciones;
+        private System.Windows.Forms.Button cmdListar;
+        private System.Windows.Forms.Label lblOperaciones;
+        private System.Windows.Forms.DataGridView grlDatos;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

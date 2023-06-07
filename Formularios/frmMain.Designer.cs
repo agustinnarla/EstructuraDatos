@@ -190,6 +190,7 @@
             this.repasoDeOperacionesToolStripMenuItem.Name = "repasoDeOperacionesToolStripMenuItem";
             this.repasoDeOperacionesToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.repasoDeOperacionesToolStripMenuItem.Text = "Repaso de operaciones";
+            this.repasoDeOperacionesToolStripMenuItem.Click += new System.EventHandler(this.repasoDeOperacionesToolStripMenuItem_Click);
             // 
             // frmEstructuraDatos
             // 

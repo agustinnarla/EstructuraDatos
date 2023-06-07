@@ -86,5 +86,10 @@ namespace EstructuraDatos.Formularios
                 " order by 1 asc";
             objBaseDatos.cmdListar(grlDatos, varSql);
         }
+
+        private void frmBaseDatos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

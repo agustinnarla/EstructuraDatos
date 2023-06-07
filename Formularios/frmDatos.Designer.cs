@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatos));
-            this.pickFoto = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDni = new System.Windows.Forms.Label();
             this.lblMateria = new System.Windows.Forms.Label();
@@ -39,19 +37,7 @@
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.cmdVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pickFoto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pickFoto
-            // 
-            this.pickFoto.Image = ((System.Drawing.Image)(resources.GetObject("pickFoto.Image")));
-            this.pickFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFoto.InitialImage")));
-            this.pickFoto.Location = new System.Drawing.Point(12, 26);
-            this.pickFoto.Name = "pickFoto";
-            this.pickFoto.Size = new System.Drawing.Size(201, 215);
-            this.pickFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pickFoto.TabIndex = 0;
-            this.pickFoto.TabStop = false;
             // 
             // lblNombre
             // 
@@ -151,19 +137,15 @@
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.pickFoto);
             this.Name = "frmDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Programador";
-            ((System.ComponentModel.ISupportInitialize)(this.pickFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pickFoto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.Label lblMateria;

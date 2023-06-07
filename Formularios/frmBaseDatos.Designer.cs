@@ -31,16 +31,16 @@
             this.grlDatos = new System.Windows.Forms.DataGridView();
             this.cmdProyeccionSimple = new System.Windows.Forms.Button();
             this.mrcOperacionesProyeccion = new System.Windows.Forms.GroupBox();
-            this.mrcOperacionesSeleccion = new System.Windows.Forms.GroupBox();
-            this.cmdPrroyeccionMultiatributo = new System.Windows.Forms.Button();
-            this.mrcOperacionesAlgebraicas = new System.Windows.Forms.GroupBox();
             this.cmdJuntar = new System.Windows.Forms.Button();
-            this.cmdSeleccionSimple = new System.Windows.Forms.Button();
-            this.cmdSeleccionMultiples = new System.Windows.Forms.Button();
+            this.cmdPrroyeccionMultiatributo = new System.Windows.Forms.Button();
+            this.mrcOperacionesSeleccion = new System.Windows.Forms.GroupBox();
             this.cmdSeleccionConvolucion = new System.Windows.Forms.Button();
-            this.cmdUnion = new System.Windows.Forms.Button();
-            this.cmdInterseccion = new System.Windows.Forms.Button();
+            this.cmdSeleccionMultiples = new System.Windows.Forms.Button();
+            this.cmdSeleccionSimple = new System.Windows.Forms.Button();
+            this.mrcOperacionesAlgebraicas = new System.Windows.Forms.GroupBox();
             this.cmdDiferencia = new System.Windows.Forms.Button();
+            this.cmdInterseccion = new System.Windows.Forms.Button();
+            this.cmdUnion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).BeginInit();
             this.mrcOperacionesProyeccion.SuspendLayout();
             this.mrcOperacionesSeleccion.SuspendLayout();
@@ -80,6 +80,26 @@
             this.mrcOperacionesProyeccion.TabStop = false;
             this.mrcOperacionesProyeccion.Text = "Operaciones de Proyecciòn";
             // 
+            // cmdJuntar
+            // 
+            this.cmdJuntar.Location = new System.Drawing.Point(24, 86);
+            this.cmdJuntar.Name = "cmdJuntar";
+            this.cmdJuntar.Size = new System.Drawing.Size(146, 23);
+            this.cmdJuntar.TabIndex = 1;
+            this.cmdJuntar.Text = "Juntar";
+            this.cmdJuntar.UseVisualStyleBackColor = true;
+            this.cmdJuntar.Click += new System.EventHandler(this.cmdJuntar_Click);
+            // 
+            // cmdPrroyeccionMultiatributo
+            // 
+            this.cmdPrroyeccionMultiatributo.Location = new System.Drawing.Point(24, 58);
+            this.cmdPrroyeccionMultiatributo.Name = "cmdPrroyeccionMultiatributo";
+            this.cmdPrroyeccionMultiatributo.Size = new System.Drawing.Size(146, 23);
+            this.cmdPrroyeccionMultiatributo.TabIndex = 1;
+            this.cmdPrroyeccionMultiatributo.Text = "Proyecciòn Multiatributo";
+            this.cmdPrroyeccionMultiatributo.UseVisualStyleBackColor = true;
+            this.cmdPrroyeccionMultiatributo.Click += new System.EventHandler(this.cmdPrroyeccionMultiatributo_Click);
+            // 
             // mrcOperacionesSeleccion
             // 
             this.mrcOperacionesSeleccion.Controls.Add(this.cmdSeleccionConvolucion);
@@ -92,15 +112,35 @@
             this.mrcOperacionesSeleccion.TabStop = false;
             this.mrcOperacionesSeleccion.Text = "Operaciones de Selecciòn";
             // 
-            // cmdPrroyeccionMultiatributo
+            // cmdSeleccionConvolucion
             // 
-            this.cmdPrroyeccionMultiatributo.Location = new System.Drawing.Point(24, 58);
-            this.cmdPrroyeccionMultiatributo.Name = "cmdPrroyeccionMultiatributo";
-            this.cmdPrroyeccionMultiatributo.Size = new System.Drawing.Size(146, 23);
-            this.cmdPrroyeccionMultiatributo.TabIndex = 1;
-            this.cmdPrroyeccionMultiatributo.Text = "Proyecciòn Multiatributo";
-            this.cmdPrroyeccionMultiatributo.UseVisualStyleBackColor = true;
-            this.cmdPrroyeccionMultiatributo.Click += new System.EventHandler(this.cmdPrroyeccionMultiatributo_Click);
+            this.cmdSeleccionConvolucion.Location = new System.Drawing.Point(6, 86);
+            this.cmdSeleccionConvolucion.Name = "cmdSeleccionConvolucion";
+            this.cmdSeleccionConvolucion.Size = new System.Drawing.Size(173, 23);
+            this.cmdSeleccionConvolucion.TabIndex = 4;
+            this.cmdSeleccionConvolucion.Text = "Selecciòn por Convoluciòn";
+            this.cmdSeleccionConvolucion.UseVisualStyleBackColor = true;
+            this.cmdSeleccionConvolucion.Click += new System.EventHandler(this.cmdSeleccionConvolucion_Click);
+            // 
+            // cmdSeleccionMultiples
+            // 
+            this.cmdSeleccionMultiples.Location = new System.Drawing.Point(6, 57);
+            this.cmdSeleccionMultiples.Name = "cmdSeleccionMultiples";
+            this.cmdSeleccionMultiples.Size = new System.Drawing.Size(173, 23);
+            this.cmdSeleccionMultiples.TabIndex = 3;
+            this.cmdSeleccionMultiples.Text = "Selecciòn Multiatributo";
+            this.cmdSeleccionMultiples.UseVisualStyleBackColor = true;
+            this.cmdSeleccionMultiples.Click += new System.EventHandler(this.cmdSeleccionMultiples_Click);
+            // 
+            // cmdSeleccionSimple
+            // 
+            this.cmdSeleccionSimple.Location = new System.Drawing.Point(6, 28);
+            this.cmdSeleccionSimple.Name = "cmdSeleccionSimple";
+            this.cmdSeleccionSimple.Size = new System.Drawing.Size(173, 23);
+            this.cmdSeleccionSimple.TabIndex = 2;
+            this.cmdSeleccionSimple.Text = "Selecciòn Simple";
+            this.cmdSeleccionSimple.UseVisualStyleBackColor = true;
+            this.cmdSeleccionSimple.Click += new System.EventHandler(this.cmdSeleccionSimple_Click);
             // 
             // mrcOperacionesAlgebraicas
             // 
@@ -114,55 +154,15 @@
             this.mrcOperacionesAlgebraicas.TabStop = false;
             this.mrcOperacionesAlgebraicas.Text = "Operaciones Algebraicas";
             // 
-            // cmdJuntar
+            // cmdDiferencia
             // 
-            this.cmdJuntar.Location = new System.Drawing.Point(24, 86);
-            this.cmdJuntar.Name = "cmdJuntar";
-            this.cmdJuntar.Size = new System.Drawing.Size(146, 23);
-            this.cmdJuntar.TabIndex = 1;
-            this.cmdJuntar.Text = "Juntar";
-            this.cmdJuntar.UseVisualStyleBackColor = true;
-            this.cmdJuntar.Click += new System.EventHandler(this.cmdJuntar_Click);
-            // 
-            // cmdSeleccionSimple
-            // 
-            this.cmdSeleccionSimple.Location = new System.Drawing.Point(6, 28);
-            this.cmdSeleccionSimple.Name = "cmdSeleccionSimple";
-            this.cmdSeleccionSimple.Size = new System.Drawing.Size(173, 23);
-            this.cmdSeleccionSimple.TabIndex = 2;
-            this.cmdSeleccionSimple.Text = "Selecciòn Simple";
-            this.cmdSeleccionSimple.UseVisualStyleBackColor = true;
-            this.cmdSeleccionSimple.Click += new System.EventHandler(this.cmdSeleccionSimple_Click);
-            // 
-            // cmdSeleccionMultiples
-            // 
-            this.cmdSeleccionMultiples.Location = new System.Drawing.Point(6, 57);
-            this.cmdSeleccionMultiples.Name = "cmdSeleccionMultiples";
-            this.cmdSeleccionMultiples.Size = new System.Drawing.Size(173, 23);
-            this.cmdSeleccionMultiples.TabIndex = 3;
-            this.cmdSeleccionMultiples.Text = "Selecciòn Multiatributo";
-            this.cmdSeleccionMultiples.UseVisualStyleBackColor = true;
-            this.cmdSeleccionMultiples.Click += new System.EventHandler(this.cmdSeleccionMultiples_Click);
-            // 
-            // cmdSeleccionConvolucion
-            // 
-            this.cmdSeleccionConvolucion.Location = new System.Drawing.Point(6, 86);
-            this.cmdSeleccionConvolucion.Name = "cmdSeleccionConvolucion";
-            this.cmdSeleccionConvolucion.Size = new System.Drawing.Size(173, 23);
-            this.cmdSeleccionConvolucion.TabIndex = 4;
-            this.cmdSeleccionConvolucion.Text = "Selecciòn por Convoluciòn";
-            this.cmdSeleccionConvolucion.UseVisualStyleBackColor = true;
-            this.cmdSeleccionConvolucion.Click += new System.EventHandler(this.cmdSeleccionConvolucion_Click);
-            // 
-            // cmdUnion
-            // 
-            this.cmdUnion.Location = new System.Drawing.Point(6, 29);
-            this.cmdUnion.Name = "cmdUnion";
-            this.cmdUnion.Size = new System.Drawing.Size(164, 23);
-            this.cmdUnion.TabIndex = 5;
-            this.cmdUnion.Text = "Uniòn";
-            this.cmdUnion.UseVisualStyleBackColor = true;
-            this.cmdUnion.Click += new System.EventHandler(this.cmdUnion_Click);
+            this.cmdDiferencia.Location = new System.Drawing.Point(6, 86);
+            this.cmdDiferencia.Name = "cmdDiferencia";
+            this.cmdDiferencia.Size = new System.Drawing.Size(164, 23);
+            this.cmdDiferencia.TabIndex = 7;
+            this.cmdDiferencia.Text = "Diferencia";
+            this.cmdDiferencia.UseVisualStyleBackColor = true;
+            this.cmdDiferencia.Click += new System.EventHandler(this.cmdDiferencia_Click);
             // 
             // cmdInterseccion
             // 
@@ -174,15 +174,15 @@
             this.cmdInterseccion.UseVisualStyleBackColor = true;
             this.cmdInterseccion.Click += new System.EventHandler(this.cmdInterseccion_Click);
             // 
-            // cmdDiferencia
+            // cmdUnion
             // 
-            this.cmdDiferencia.Location = new System.Drawing.Point(6, 86);
-            this.cmdDiferencia.Name = "cmdDiferencia";
-            this.cmdDiferencia.Size = new System.Drawing.Size(164, 23);
-            this.cmdDiferencia.TabIndex = 7;
-            this.cmdDiferencia.Text = "Diferencia";
-            this.cmdDiferencia.UseVisualStyleBackColor = true;
-            this.cmdDiferencia.Click += new System.EventHandler(this.cmdDiferencia_Click);
+            this.cmdUnion.Location = new System.Drawing.Point(6, 29);
+            this.cmdUnion.Name = "cmdUnion";
+            this.cmdUnion.Size = new System.Drawing.Size(164, 23);
+            this.cmdUnion.TabIndex = 5;
+            this.cmdUnion.Text = "Uniòn";
+            this.cmdUnion.UseVisualStyleBackColor = true;
+            this.cmdUnion.Click += new System.EventHandler(this.cmdUnion_Click);
             // 
             // frmBaseDatos
             // 
@@ -195,6 +195,7 @@
             this.Controls.Add(this.grlDatos);
             this.Name = "frmBaseDatos";
             this.Text = "Base de Datos";
+            this.Load += new System.EventHandler(this.frmBaseDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();
             this.mrcOperacionesProyeccion.ResumeLayout(false);
             this.mrcOperacionesSeleccion.ResumeLayout(false);

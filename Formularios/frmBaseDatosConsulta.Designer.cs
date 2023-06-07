@@ -42,12 +42,12 @@
             this.txtConsulta.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtConsulta.Multiline = true;
             this.txtConsulta.Name = "txtConsulta";
-            this.txtConsulta.Size = new System.Drawing.Size(1291, 121);
+            this.txtConsulta.Size = new System.Drawing.Size(1012, 121);
             this.txtConsulta.TabIndex = 0;
             // 
             // cmdConsulta
             // 
-            this.cmdConsulta.Location = new System.Drawing.Point(1158, 149);
+            this.cmdConsulta.Location = new System.Drawing.Point(877, 149);
             this.cmdConsulta.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cmdConsulta.Name = "cmdConsulta";
             this.cmdConsulta.Size = new System.Drawing.Size(155, 30);
@@ -65,7 +65,7 @@
             this.grlDatos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.grlDatos.Name = "grlDatos";
             this.grlDatos.ReadOnly = true;
-            this.grlDatos.Size = new System.Drawing.Size(1293, 214);
+            this.grlDatos.Size = new System.Drawing.Size(1012, 214);
             this.grlDatos.TabIndex = 2;
             // 
             // lblConsulta
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 415);
+            this.ClientSize = new System.Drawing.Size(1224, 415);
             this.Controls.Add(this.lblConsulta);
             this.Controls.Add(this.grlDatos);
             this.Controls.Add(this.cmdConsulta);

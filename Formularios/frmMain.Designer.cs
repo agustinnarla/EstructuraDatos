@@ -194,11 +194,12 @@
             // 
             // frmEstructuraDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 452);
             this.Controls.Add(this.Menú);
+            this.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F);
             this.MainMenuStrip = this.Menú;
             this.Name = "frmEstructuraDatos";
             this.Text = "Estructura de Datos";

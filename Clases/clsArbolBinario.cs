@@ -12,7 +12,9 @@ namespace EstructuraDatos.Clases
     {
         private clsNodo Inicio;
         private clsNodo[] vecNodo = new clsNodo[100];
-       
+        
+        private int NodoEliminar;
+
         private Int32 varIndice= 0;
 
         public clsNodo Raiz
@@ -187,12 +189,11 @@ namespace EstructuraDatos.Clases
         }
         public void InOrdenAsc(TreeNodeCollection NodoPadre, clsNodo R)
         {
-            if (Raiz != null)
-            {
-                TreeNode NodoNuevo = NodoPadre.Add(R.Codigo.ToString());
-                if (R.Izquierdo != null) InOrdenAsc(NodoNuevo.Nodes, R.Izquierdo);
-                if (R.Derecho != null) InOrdenAsc(NodoNuevo.Nodes, R.Derecho);
-            }
+            
+            TreeNode NodoNuevo = NodoPadre.Add(R.Codigo.ToString());
+            if (R.Izquierdo != null) InOrdenAsc(NodoNuevo.Nodes, R.Izquierdo);
+            if (R.Derecho != null) InOrdenAsc(NodoNuevo.Nodes, R.Derecho);
+            
         }
 
         public void InOrdenDsc(ListBox Lst, clsNodo R)
@@ -371,5 +372,22 @@ namespace EstructuraDatos.Clases
 
             return aux;
         }
+        //public void Equilibrar()
+        //{
+        //    NodoEliminar = default;
+        //    varIndice = 0;
+        //    cmdCargarVecotrInOrden(Raiz);
+        //    Raiz = null;
+        //    cmdEquilibrarArbol(0, varIndice - 1);
+        //}
+
+        //public void Equilibrar(int Nodo)
+        //{
+        //    NodoEliminar = Nodo;
+        //    varIndice = 0;
+        //    cmdCargarVecotrInOrden(Raiz);
+        //    Raiz = null;
+        //    cmdEquilibrarArbol(0, varIndice - 1);
+        //}
     }
 }

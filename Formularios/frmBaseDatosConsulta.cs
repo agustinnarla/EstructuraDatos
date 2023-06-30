@@ -28,5 +28,22 @@ namespace EstructuraDatos.Formularios
             String varSql = txtConsulta.Text;
             objBaseDatos.cmdListar(grlDatos, varSql);
         }
+        private void Enabled()
+        {
+            if (txtConsulta.Text != "")
+            {
+                cmdConsulta.Enabled = true;
+
+            }
+            else
+            {
+                cmdConsulta.Enabled = false;
+            }
+        }
+
+        private void txtConsulta_TextChanged(object sender, EventArgs e)
+        {
+            Enabled();
+        }
     }
 }

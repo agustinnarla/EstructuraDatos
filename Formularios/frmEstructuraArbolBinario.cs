@@ -174,22 +174,42 @@ namespace EstructuraDatos.Formularios
                 {
                     objArbolBinario.cmdEquilibrar();
                 }
-               
+
                 txtNombreInfo.Text = "";
                 txtTramiteInfo.Text = "";
                 lstCodigoInfo.SelectedIndex = -1;
 
             }
-            else 
+            else
             {
-              
+
                 grlDatos.Rows.Clear();
                 lstCodigo.Items.Clear();
                 lstDatos.Items.Clear();
                 tvArbolito.Nodes.Clear();
 
             }
-            
+
+            //if (lstCodigo.Items.Count != 0)
+            //{
+            //    objArbolBinario.Equilibrar(Convert.ToInt32(lstCodigo.Text));
+
+
+            //    if (objArbolBinario.Raiz == null)
+            //    {
+
+            //        grlDatos.Rows.Clear();
+            //        lstCodigo.Items.Clear();
+            //        lstDatos.Items.Clear();
+            //        tvArbolito.Nodes.Clear();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debe agregar al menos un elemento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    cmdEliminar.Enabled = false;
+            //}
+
             lstCodigo.Focus();
         }
         private void Enabled()

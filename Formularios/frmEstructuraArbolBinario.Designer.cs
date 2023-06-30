@@ -85,10 +85,10 @@
             this.Còdigo,
             this.Nombre,
             this.Tràmite});
-            this.grlDatos.Location = new System.Drawing.Point(198, 447);
+            this.grlDatos.Location = new System.Drawing.Point(198, 492);
             this.grlDatos.Name = "grlDatos";
             this.grlDatos.ReadOnly = true;
-            this.grlDatos.Size = new System.Drawing.Size(385, 134);
+            this.grlDatos.Size = new System.Drawing.Size(385, 155);
             this.grlDatos.TabIndex = 1;
             // 
             // Còdigo
@@ -112,9 +112,10 @@
             // lstDatos
             // 
             this.lstDatos.FormattingEnabled = true;
-            this.lstDatos.Location = new System.Drawing.Point(12, 237);
+            this.lstDatos.ItemHeight = 15;
+            this.lstDatos.Location = new System.Drawing.Point(12, 270);
             this.lstDatos.Name = "lstDatos";
-            this.lstDatos.Size = new System.Drawing.Size(174, 342);
+            this.lstDatos.Size = new System.Drawing.Size(174, 379);
             this.lstDatos.TabIndex = 0;
             this.lstDatos.SelectedIndexChanged += new System.EventHandler(this.lstDatos_SelectedIndexChanged);
             // 
@@ -123,9 +124,9 @@
             this.mrcElementoEliminados.Controls.Add(this.lstCodigo);
             this.mrcElementoEliminados.Controls.Add(this.cmdEliminar);
             this.mrcElementoEliminados.Controls.Add(this.lblCodigoEliminar);
-            this.mrcElementoEliminados.Location = new System.Drawing.Point(198, 237);
+            this.mrcElementoEliminados.Location = new System.Drawing.Point(198, 251);
             this.mrcElementoEliminados.Name = "mrcElementoEliminados";
-            this.mrcElementoEliminados.Size = new System.Drawing.Size(385, 84);
+            this.mrcElementoEliminados.Size = new System.Drawing.Size(385, 97);
             this.mrcElementoEliminados.TabIndex = 14;
             this.mrcElementoEliminados.TabStop = false;
             this.mrcElementoEliminados.Text = "Elemento Eliminado";
@@ -134,18 +135,18 @@
             // 
             this.lstCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstCodigo.FormattingEnabled = true;
-            this.lstCodigo.Location = new System.Drawing.Point(76, 36);
+            this.lstCodigo.Location = new System.Drawing.Point(76, 42);
             this.lstCodigo.Name = "lstCodigo";
-            this.lstCodigo.Size = new System.Drawing.Size(100, 21);
+            this.lstCodigo.Size = new System.Drawing.Size(100, 23);
             this.lstCodigo.TabIndex = 8;
             this.lstCodigo.SelectedIndexChanged += new System.EventHandler(this.lstCodigo_SelectedIndexChanged);
             // 
             // cmdEliminar
             // 
             this.cmdEliminar.Enabled = false;
-            this.cmdEliminar.Location = new System.Drawing.Point(216, 31);
+            this.cmdEliminar.Location = new System.Drawing.Point(216, 36);
             this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.Size = new System.Drawing.Size(100, 34);
+            this.cmdEliminar.Size = new System.Drawing.Size(100, 39);
             this.cmdEliminar.TabIndex = 7;
             this.cmdEliminar.Text = "Eliminar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
@@ -154,9 +155,9 @@
             // lblCodigoEliminar
             // 
             this.lblCodigoEliminar.AutoSize = true;
-            this.lblCodigoEliminar.Location = new System.Drawing.Point(15, 37);
+            this.lblCodigoEliminar.Location = new System.Drawing.Point(15, 43);
             this.lblCodigoEliminar.Name = "lblCodigoEliminar";
-            this.lblCodigoEliminar.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigoEliminar.Size = new System.Drawing.Size(48, 15);
             this.lblCodigoEliminar.TabIndex = 6;
             this.lblCodigoEliminar.Text = "Còdigo:";
             // 
@@ -170,9 +171,9 @@
             this.mrcNuevoElemento.Controls.Add(this.lblTramite);
             this.mrcNuevoElemento.Controls.Add(this.lblNombre);
             this.mrcNuevoElemento.Controls.Add(this.lblCòdigo);
-            this.mrcNuevoElemento.Location = new System.Drawing.Point(198, 12);
+            this.mrcNuevoElemento.Location = new System.Drawing.Point(198, 14);
             this.mrcNuevoElemento.Name = "mrcNuevoElemento";
-            this.mrcNuevoElemento.Size = new System.Drawing.Size(175, 219);
+            this.mrcNuevoElemento.Size = new System.Drawing.Size(175, 231);
             this.mrcNuevoElemento.TabIndex = 13;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
@@ -181,7 +182,7 @@
             // 
             this.lblAyuda.AutoSize = true;
             this.lblAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAyuda.Location = new System.Drawing.Point(59, 188);
+            this.lblAyuda.Location = new System.Drawing.Point(59, 200);
             this.lblAyuda.Name = "lblAyuda";
             this.lblAyuda.Size = new System.Drawing.Size(110, 13);
             this.lblAyuda.TabIndex = 7;
@@ -191,9 +192,9 @@
             // 
             // cmdAgregar
             // 
-            this.cmdAgregar.Location = new System.Drawing.Point(65, 132);
+            this.cmdAgregar.Location = new System.Drawing.Point(65, 152);
             this.cmdAgregar.Name = "cmdAgregar";
-            this.cmdAgregar.Size = new System.Drawing.Size(100, 34);
+            this.cmdAgregar.Size = new System.Drawing.Size(100, 39);
             this.cmdAgregar.TabIndex = 6;
             this.cmdAgregar.Text = "Agregar";
             this.cmdAgregar.UseVisualStyleBackColor = true;
@@ -201,62 +202,62 @@
             // 
             // txtTramite
             // 
-            this.txtTramite.Location = new System.Drawing.Point(65, 97);
+            this.txtTramite.Location = new System.Drawing.Point(65, 112);
             this.txtTramite.Name = "txtTramite";
-            this.txtTramite.Size = new System.Drawing.Size(100, 20);
+            this.txtTramite.Size = new System.Drawing.Size(100, 22);
             this.txtTramite.TabIndex = 5;
             this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(65, 68);
+            this.txtNombre.Location = new System.Drawing.Point(65, 78);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(65, 37);
+            this.txtCodigo.Location = new System.Drawing.Point(65, 43);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(100, 22);
             this.txtCodigo.TabIndex = 3;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblTramite
             // 
             this.lblTramite.AutoSize = true;
-            this.lblTramite.Location = new System.Drawing.Point(6, 97);
+            this.lblTramite.Location = new System.Drawing.Point(6, 112);
             this.lblTramite.Name = "lblTramite";
-            this.lblTramite.Size = new System.Drawing.Size(45, 13);
+            this.lblTramite.Size = new System.Drawing.Size(47, 15);
             this.lblTramite.TabIndex = 2;
             this.lblTramite.Text = "Tràmite:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(6, 68);
+            this.lblNombre.Location = new System.Drawing.Point(6, 78);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(51, 15);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblCòdigo
             // 
             this.lblCòdigo.AutoSize = true;
-            this.lblCòdigo.Location = new System.Drawing.Point(6, 37);
+            this.lblCòdigo.Location = new System.Drawing.Point(6, 43);
             this.lblCòdigo.Name = "lblCòdigo";
-            this.lblCòdigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCòdigo.Size = new System.Drawing.Size(48, 15);
             this.lblCòdigo.TabIndex = 0;
             this.lblCòdigo.Text = "Còdigo:";
             // 
             // picFoto
             // 
             this.picFoto.Image = ((System.Drawing.Image)(resources.GetObject("picFoto.Image")));
-            this.picFoto.Location = new System.Drawing.Point(12, 12);
+            this.picFoto.Location = new System.Drawing.Point(12, 14);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(174, 219);
+            this.picFoto.Size = new System.Drawing.Size(174, 253);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 12;
             this.picFoto.TabStop = false;
@@ -266,9 +267,9 @@
             this.mrcListarDatos.Controls.Add(this.btnDescendente);
             this.mrcListarDatos.Controls.Add(this.btnAscendente);
             this.mrcListarDatos.Enabled = false;
-            this.mrcListarDatos.Location = new System.Drawing.Point(379, 12);
+            this.mrcListarDatos.Location = new System.Drawing.Point(379, 14);
             this.mrcListarDatos.Name = "mrcListarDatos";
-            this.mrcListarDatos.Size = new System.Drawing.Size(201, 68);
+            this.mrcListarDatos.Size = new System.Drawing.Size(201, 65);
             this.mrcListarDatos.TabIndex = 17;
             this.mrcListarDatos.TabStop = false;
             this.mrcListarDatos.Text = "In orden";
@@ -277,9 +278,9 @@
             // btnDescendente
             // 
             this.btnDescendente.AutoSize = true;
-            this.btnDescendente.Location = new System.Drawing.Point(106, 33);
+            this.btnDescendente.Location = new System.Drawing.Point(106, 30);
             this.btnDescendente.Name = "btnDescendente";
-            this.btnDescendente.Size = new System.Drawing.Size(89, 17);
+            this.btnDescendente.Size = new System.Drawing.Size(92, 19);
             this.btnDescendente.TabIndex = 1;
             this.btnDescendente.TabStop = true;
             this.btnDescendente.Text = "Descendente";
@@ -289,9 +290,9 @@
             // btnAscendente
             // 
             this.btnAscendente.AutoSize = true;
-            this.btnAscendente.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendente.Location = new System.Drawing.Point(6, 30);
             this.btnAscendente.Name = "btnAscendente";
-            this.btnAscendente.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendente.Size = new System.Drawing.Size(85, 19);
             this.btnAscendente.TabIndex = 0;
             this.btnAscendente.TabStop = true;
             this.btnAscendente.Text = "Ascendente";
@@ -301,9 +302,9 @@
             // btnAscendentePost
             // 
             this.btnAscendentePost.AutoSize = true;
-            this.btnAscendentePost.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendentePost.Location = new System.Drawing.Point(6, 28);
             this.btnAscendentePost.Name = "btnAscendentePost";
-            this.btnAscendentePost.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendentePost.Size = new System.Drawing.Size(85, 19);
             this.btnAscendentePost.TabIndex = 3;
             this.btnAscendentePost.TabStop = true;
             this.btnAscendentePost.Text = "Ascendente";
@@ -313,9 +314,9 @@
             // btnAscendentePre
             // 
             this.btnAscendentePre.AutoSize = true;
-            this.btnAscendentePre.Location = new System.Drawing.Point(6, 33);
+            this.btnAscendentePre.Location = new System.Drawing.Point(6, 28);
             this.btnAscendentePre.Name = "btnAscendentePre";
-            this.btnAscendentePre.Size = new System.Drawing.Size(82, 17);
+            this.btnAscendentePre.Size = new System.Drawing.Size(85, 19);
             this.btnAscendentePre.TabIndex = 2;
             this.btnAscendentePre.TabStop = true;
             this.btnAscendentePre.Text = "Ascendente";
@@ -327,9 +328,9 @@
             this.mrcPre.Controls.Add(this.btnDescendentePre);
             this.mrcPre.Controls.Add(this.btnAscendentePre);
             this.mrcPre.Enabled = false;
-            this.mrcPre.Location = new System.Drawing.Point(379, 89);
+            this.mrcPre.Location = new System.Drawing.Point(379, 101);
             this.mrcPre.Name = "mrcPre";
-            this.mrcPre.Size = new System.Drawing.Size(201, 68);
+            this.mrcPre.Size = new System.Drawing.Size(201, 63);
             this.mrcPre.TabIndex = 18;
             this.mrcPre.TabStop = false;
             this.mrcPre.Text = "Pre Orden";
@@ -338,9 +339,9 @@
             // btnDescendentePre
             // 
             this.btnDescendentePre.AutoSize = true;
-            this.btnDescendentePre.Location = new System.Drawing.Point(106, 33);
+            this.btnDescendentePre.Location = new System.Drawing.Point(106, 28);
             this.btnDescendentePre.Name = "btnDescendentePre";
-            this.btnDescendentePre.Size = new System.Drawing.Size(89, 17);
+            this.btnDescendentePre.Size = new System.Drawing.Size(92, 19);
             this.btnDescendentePre.TabIndex = 1;
             this.btnDescendentePre.TabStop = true;
             this.btnDescendentePre.Text = "Descendente";
@@ -352,9 +353,9 @@
             this.mrcPro.Controls.Add(this.btnDescendentePost);
             this.mrcPro.Controls.Add(this.btnAscendentePost);
             this.mrcPro.Enabled = false;
-            this.mrcPro.Location = new System.Drawing.Point(379, 163);
+            this.mrcPro.Location = new System.Drawing.Point(379, 180);
             this.mrcPro.Name = "mrcPro";
-            this.mrcPro.Size = new System.Drawing.Size(201, 68);
+            this.mrcPro.Size = new System.Drawing.Size(201, 64);
             this.mrcPro.TabIndex = 19;
             this.mrcPro.TabStop = false;
             this.mrcPro.Text = "Post Orden";
@@ -363,9 +364,9 @@
             // btnDescendentePost
             // 
             this.btnDescendentePost.AutoSize = true;
-            this.btnDescendentePost.Location = new System.Drawing.Point(106, 33);
+            this.btnDescendentePost.Location = new System.Drawing.Point(106, 28);
             this.btnDescendentePost.Name = "btnDescendentePost";
-            this.btnDescendentePost.Size = new System.Drawing.Size(89, 17);
+            this.btnDescendentePost.Size = new System.Drawing.Size(92, 19);
             this.btnDescendentePost.TabIndex = 1;
             this.btnDescendentePost.TabStop = true;
             this.btnDescendentePost.Text = "Descendente";
@@ -374,17 +375,17 @@
             // 
             // tvArbolito
             // 
-            this.tvArbolito.Location = new System.Drawing.Point(601, 12);
+            this.tvArbolito.Location = new System.Drawing.Point(601, 14);
             this.tvArbolito.Name = "tvArbolito";
-            this.tvArbolito.Size = new System.Drawing.Size(313, 569);
+            this.tvArbolito.Size = new System.Drawing.Size(313, 638);
             this.tvArbolito.TabIndex = 20;
             // 
             // cmdBuscar
             // 
             this.cmdBuscar.Enabled = false;
-            this.cmdBuscar.Location = new System.Drawing.Point(216, 28);
+            this.cmdBuscar.Location = new System.Drawing.Point(216, 32);
             this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(100, 34);
+            this.cmdBuscar.Size = new System.Drawing.Size(100, 39);
             this.cmdBuscar.TabIndex = 21;
             this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.UseVisualStyleBackColor = true;
@@ -399,9 +400,9 @@
             this.mrcBusqueda.Controls.Add(this.lblTramiteInfo);
             this.mrcBusqueda.Controls.Add(this.cmdBuscar);
             this.mrcBusqueda.Controls.Add(this.lblNombreInfo);
-            this.mrcBusqueda.Location = new System.Drawing.Point(198, 327);
+            this.mrcBusqueda.Location = new System.Drawing.Point(198, 354);
             this.mrcBusqueda.Name = "mrcBusqueda";
-            this.mrcBusqueda.Size = new System.Drawing.Size(385, 114);
+            this.mrcBusqueda.Size = new System.Drawing.Size(385, 132);
             this.mrcBusqueda.TabIndex = 15;
             this.mrcBusqueda.TabStop = false;
             this.mrcBusqueda.Text = "Busqueda";
@@ -410,61 +411,61 @@
             // 
             this.lstCodigoInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstCodigoInfo.FormattingEnabled = true;
-            this.lstCodigoInfo.Location = new System.Drawing.Point(75, 28);
+            this.lstCodigoInfo.Location = new System.Drawing.Point(75, 32);
             this.lstCodigoInfo.Name = "lstCodigoInfo";
-            this.lstCodigoInfo.Size = new System.Drawing.Size(105, 21);
+            this.lstCodigoInfo.Size = new System.Drawing.Size(105, 23);
             this.lstCodigoInfo.TabIndex = 9;
             this.lstCodigoInfo.SelectedIndexChanged += new System.EventHandler(this.lstCodigoInfo_SelectedIndexChanged);
             // 
             // txtTramiteInfo
             // 
             this.txtTramiteInfo.Enabled = false;
-            this.txtTramiteInfo.Location = new System.Drawing.Point(76, 85);
+            this.txtTramiteInfo.Location = new System.Drawing.Point(76, 98);
             this.txtTramiteInfo.Name = "txtTramiteInfo";
-            this.txtTramiteInfo.Size = new System.Drawing.Size(104, 20);
+            this.txtTramiteInfo.Size = new System.Drawing.Size(104, 22);
             this.txtTramiteInfo.TabIndex = 8;
             // 
             // txtNombreInfo
             // 
             this.txtNombreInfo.Enabled = false;
-            this.txtNombreInfo.Location = new System.Drawing.Point(76, 57);
+            this.txtNombreInfo.Location = new System.Drawing.Point(76, 66);
             this.txtNombreInfo.Name = "txtNombreInfo";
-            this.txtNombreInfo.Size = new System.Drawing.Size(104, 20);
+            this.txtNombreInfo.Size = new System.Drawing.Size(104, 22);
             this.txtNombreInfo.TabIndex = 7;
             // 
             // lblCodigoInfo
             // 
             this.lblCodigoInfo.AutoSize = true;
-            this.lblCodigoInfo.Location = new System.Drawing.Point(15, 33);
+            this.lblCodigoInfo.Location = new System.Drawing.Point(15, 38);
             this.lblCodigoInfo.Name = "lblCodigoInfo";
-            this.lblCodigoInfo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigoInfo.Size = new System.Drawing.Size(48, 15);
             this.lblCodigoInfo.TabIndex = 25;
             this.lblCodigoInfo.Text = "Còdigo:";
             // 
             // lblTramiteInfo
             // 
             this.lblTramiteInfo.AutoSize = true;
-            this.lblTramiteInfo.Location = new System.Drawing.Point(13, 89);
+            this.lblTramiteInfo.Location = new System.Drawing.Point(13, 103);
             this.lblTramiteInfo.Name = "lblTramiteInfo";
-            this.lblTramiteInfo.Size = new System.Drawing.Size(45, 13);
+            this.lblTramiteInfo.Size = new System.Drawing.Size(47, 15);
             this.lblTramiteInfo.TabIndex = 23;
             this.lblTramiteInfo.Text = "Trámite:";
             // 
             // lblNombreInfo
             // 
             this.lblNombreInfo.AutoSize = true;
-            this.lblNombreInfo.Location = new System.Drawing.Point(13, 61);
+            this.lblNombreInfo.Location = new System.Drawing.Point(13, 70);
             this.lblNombreInfo.Name = "lblNombreInfo";
-            this.lblNombreInfo.Size = new System.Drawing.Size(47, 13);
+            this.lblNombreInfo.Size = new System.Drawing.Size(51, 15);
             this.lblNombreInfo.TabIndex = 6;
             this.lblNombreInfo.Text = "Nombre:";
             // 
             // frmEstructuraArbolBinario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(923, 588);
+            this.ClientSize = new System.Drawing.Size(923, 653);
             this.Controls.Add(this.mrcBusqueda);
             this.Controls.Add(this.tvArbolito);
             this.Controls.Add(this.grlDatos);
@@ -475,6 +476,7 @@
             this.Controls.Add(this.mrcElementoEliminados);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picFoto);
+            this.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F);
             this.Name = "frmEstructuraArbolBinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica No Lineal - Arbol Binario";

@@ -24,7 +24,7 @@ namespace EstructuraDatos.Formularios
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Enabled();
         }
 
         Clases.clsBaseDeDatos objBaseDatos = new Clases.clsBaseDeDatos();
@@ -88,6 +88,18 @@ namespace EstructuraDatos.Formularios
                     break;
             }
             objBaseDatos.cmdListar(grlDatos, varSql);
+        }
+        private void Enabled()
+        {
+            if (lstOperaciones.SelectedIndex != -1)
+            {
+                cmdListar.Enabled = true;
+
+            }
+            else
+            {
+                cmdListar.Enabled = false;
+            }
         }
     }
 }

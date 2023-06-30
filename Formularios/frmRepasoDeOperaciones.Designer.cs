@@ -51,17 +51,18 @@
             "Selección Multiatributo con operador AND",
             "Selección Multiatributo con operador OR",
             "Selección Multiatributo con CONVOLUCION"});
-            this.lstOperaciones.Location = new System.Drawing.Point(261, 16);
+            this.lstOperaciones.Location = new System.Drawing.Point(261, 18);
             this.lstOperaciones.Name = "lstOperaciones";
-            this.lstOperaciones.Size = new System.Drawing.Size(319, 21);
+            this.lstOperaciones.Size = new System.Drawing.Size(319, 23);
             this.lstOperaciones.TabIndex = 0;
             this.lstOperaciones.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cmdListar
             // 
-            this.cmdListar.Location = new System.Drawing.Point(586, 13);
+            this.cmdListar.Enabled = false;
+            this.cmdListar.Location = new System.Drawing.Point(586, 15);
             this.cmdListar.Name = "cmdListar";
-            this.cmdListar.Size = new System.Drawing.Size(113, 25);
+            this.cmdListar.Size = new System.Drawing.Size(113, 29);
             this.cmdListar.TabIndex = 1;
             this.cmdListar.Text = "Listar";
             this.cmdListar.UseVisualStyleBackColor = true;
@@ -70,39 +71,46 @@
             // lblOperaciones
             // 
             this.lblOperaciones.AutoSize = true;
-            this.lblOperaciones.Location = new System.Drawing.Point(44, 19);
+            this.lblOperaciones.Location = new System.Drawing.Point(28, 21);
             this.lblOperaciones.Name = "lblOperaciones";
-            this.lblOperaciones.Size = new System.Drawing.Size(211, 13);
+            this.lblOperaciones.Size = new System.Drawing.Size(227, 15);
             this.lblOperaciones.TabIndex = 2;
             this.lblOperaciones.Text = "Operaciónes a realizar en la base de datos:";
             // 
             // grlDatos
             // 
+            this.grlDatos.AllowUserToAddRows = false;
+            this.grlDatos.AllowUserToDeleteRows = false;
             this.grlDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grlDatos.Location = new System.Drawing.Point(47, 198);
+            this.grlDatos.Location = new System.Drawing.Point(31, 221);
             this.grlDatos.Name = "grlDatos";
-            this.grlDatos.Size = new System.Drawing.Size(652, 214);
+            this.grlDatos.ReadOnly = true;
+            this.grlDatos.Size = new System.Drawing.Size(668, 247);
             this.grlDatos.TabIndex = 3;
             // 
             // lblInfo
             // 
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblInfo.Location = new System.Drawing.Point(44, 66);
+            this.lblInfo.Location = new System.Drawing.Point(31, 76);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(655, 112);
+            this.lblInfo.Size = new System.Drawing.Size(671, 129);
             this.lblInfo.TabIndex = 4;
             // 
             // frmRepasoDeOperaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(719, 480);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.grlDatos);
             this.Controls.Add(this.lblOperaciones);
             this.Controls.Add(this.cmdListar);
             this.Controls.Add(this.lstOperaciones);
+            this.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F);
             this.Name = "frmRepasoDeOperaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Repaso Operaciones";
             this.Load += new System.EventHandler(this.frmRepasoDeOperaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grlDatos)).EndInit();
